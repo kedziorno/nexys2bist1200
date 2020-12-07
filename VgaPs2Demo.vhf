@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : VgaPs2Demo.vhf
--- /___/   /\     Timestamp : 12/07/2020 12:52:34
+-- /___/   /\     Timestamp : 12/04/2020 13:33:33
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl /home/user/workspace/nexys2bist1200original/VgaPs2Demo.vhf -w /home/user/workspace/nexys2bist1200original/VgaPs2Demo.sch
+--Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl /home/user/workspace/nexys2bist1200/VgaPs2Demo.vhf -w /home/user/workspace/nexys2bist1200/VgaPs2Demo.sch
 --Design Name: VgaPs2Demo
 --Device: spartan3e
 --Purpose:

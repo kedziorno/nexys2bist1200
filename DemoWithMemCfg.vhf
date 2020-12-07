@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : DemoWithMemCfg.vhf
--- /___/   /\     Timestamp : 12/07/2020 12:52:34
+-- /___/   /\     Timestamp : 12/05/2020 01:19:40
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl /home/user/workspace/nexys2bist1200original/DemoWithMemCfg.vhf -w /home/user/workspace/nexys2bist1200original/DemoWithMemCfg.sch
+--Command: /home/user/.local/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl /home/user/workspace/nexys2bist1200/DemoWithMemCfg.vhf -w /home/user/workspace/nexys2bist1200/DemoWithMemCfg.sch
 --Design Name: DemoWithMemCfg
 --Device: spartan3e
 --Purpose:
@@ -39,29 +39,29 @@ end VgaPs2Demo_MUSER_DemoWithMemCfg;
 
 architecture BEHAVIORAL of VgaPs2Demo_MUSER_DemoWithMemCfg is
    attribute BOX_TYPE   : string ;
-   signal ck25MHz    : std_logic;
-   signal ck100MHz   : std_logic;
-   signal XLXN_50    : std_logic_vector (9 downto 0);
-   signal XLXN_60    : std_logic;
-   signal XLXN_61    : std_logic;
-   signal XLXN_62    : std_logic;
-   signal XLXN_64    : std_logic_vector (7 downto 0);
-   signal XLXN_77    : std_logic_vector (9 downto 0);
-   signal XLXN_131   : std_logic_vector (9 downto 0);
-   signal XLXN_132   : std_logic_vector (7 downto 0);
-   signal XLXN_156   : std_logic;
-   signal XLXN_157   : std_logic;
-   signal XLXN_159   : std_logic;
-   signal XLXN_457   : std_logic;
-   signal XLXN_469   : std_logic_vector (13 downto 0);
-   signal XLXN_470   : std_logic_vector (3 downto 0);
-   signal XLXN_471   : std_logic_vector (3 downto 0);
-   signal XLXN_472   : std_logic_vector (3 downto 0);
-   signal XLXN_473   : std_logic_vector (3 downto 0);
-   signal XLXN_474   : std_logic_vector (3 downto 0);
-   signal XLXN_475   : std_logic_vector (3 downto 0);
-   signal XLXN_490   : std_logic_vector (10 downto 0);
-   signal XLXN_491   : std_logic_vector (10 downto 0);
+   signal ck25MHz    : std_logic := '0';
+   signal ck100MHz   : std_logic := '0';
+   signal XLXN_50    : std_logic_vector (9 downto 0) := (others => '0');
+   signal XLXN_60    : std_logic := '0';
+   signal XLXN_61    : std_logic := '0';
+   signal XLXN_62    : std_logic := '0';
+   signal XLXN_64    : std_logic_vector (7 downto 0) := (others => '0');
+   signal XLXN_77    : std_logic_vector (9 downto 0) := (others => '0');
+   signal XLXN_131   : std_logic_vector (9 downto 0) := (others => '0');
+   signal XLXN_132   : std_logic_vector (7 downto 0) := (others => '0');
+   signal XLXN_156   : std_logic := '0';
+   signal XLXN_157   : std_logic := '0';
+   signal XLXN_159   : std_logic := '0';
+   signal XLXN_457   : std_logic := '0';
+   signal XLXN_469   : std_logic_vector (13 downto 0) := (others => '0');
+   signal XLXN_470   : std_logic_vector (3 downto 0) := (others => '0');
+   signal XLXN_471   : std_logic_vector (3 downto 0) := (others => '0');
+   signal XLXN_472   : std_logic_vector (3 downto 0) := (others => '0');
+   signal XLXN_473   : std_logic_vector (3 downto 0) := (others => '0');
+   signal XLXN_474   : std_logic_vector (3 downto 0) := (others => '0');
+   signal XLXN_475   : std_logic_vector (3 downto 0) := (others => '0');
+   signal XLXN_490   : std_logic_vector (10 downto 0) := (others => '0');
+   signal XLXN_491   : std_logic_vector (10 downto 0) := (others => '0');
    component clkdllctrl
       port ( ckDivOut : inout   std_logic; 
              ckOut    : inout std_logic; 
@@ -259,6 +259,9 @@ end BEHAVIORAL;
 
 
 
+
+
+
 library ieee;
 use ieee.std_logic_1164.ALL;
 use ieee.numeric_std.ALL;
@@ -313,54 +316,54 @@ end DemoWithMemCfg;
 
 architecture BEHAVIORAL of DemoWithMemCfg is
    attribute BOX_TYPE   : string ;
-   signal XLXN_1487     : std_logic_vector (7 downto 0);
-   signal XLXN_1488     : std_logic;
-   signal XLXN_1526     : std_logic_vector (7 downto 0);
-   signal XLXN_1527     : std_logic;
-   signal XLXN_1579     : std_logic;
-   signal XLXN_1747     : std_logic_vector (3 downto 0);
-   signal XLXN_1748     : std_logic_vector (3 downto 0);
-   signal XLXN_1749     : std_logic_vector (3 downto 0);
-   signal XLXN_1750     : std_logic;
-   signal XLXN_1751     : std_logic;
-   signal XLXN_1848     : std_logic_vector (3 downto 0);
-   signal XLXN_1849     : std_logic;
-   signal XLXN_1852     : std_logic_vector (6 downto 0);
-   signal XLXN_1882     : std_logic;
-   signal XLXN_1902     : std_logic;
-   signal XLXN_1938     : std_logic;
-   signal XLXN_1939     : std_logic_vector (6 downto 0);
-   signal XLXN_1940     : std_logic_vector (3 downto 0);
-   signal XLXN_1944     : std_logic_vector (7 downto 0);
-   signal XLXN_1947     : std_logic;
-   signal XLXN_1948     : std_logic;
-   signal XLXN_1949     : std_logic;
-   signal XLXN_2184     : std_logic_vector (7 downto 0);
-   signal XLXN_2186     : std_logic_vector (7 downto 0);
-   signal XLXN_2187     : std_logic_vector (7 downto 0);
-   signal XLXN_2196     : std_logic_vector (7 downto 0);
-   signal XLXN_2212     : std_logic_vector (47 downto 0);
-   signal XLXN_2230     : std_logic_vector (7 downto 0);
-   signal XLXN_2235     : std_logic;
-   signal XLXN_2236     : std_logic;
-   signal XLXN_2237     : std_logic;
-   signal XLXN_2238     : std_logic;
-   signal XLXN_2239     : std_logic;
-   signal XLXN_2252     : std_logic;
-   signal XLXN_2549     : std_logic_vector (7 downto 0);
-   signal XLXN_2550     : std_logic_vector (1 downto 0);
-   signal XLXN_2570     : std_logic;
-   signal RamLB_DUMMY   : std_logic;
-   signal MemOe_DUMMY   : std_logic;
-   signal RamAdv_DUMMY  : std_logic;
-   signal FlashRp_DUMMY : std_logic;
-   signal RamUB_DUMMY   : std_logic;
-   signal RamCS_DUMMY   : std_logic;
-   signal MemWr_DUMMY   : std_logic;
-   signal FlashCS_DUMMY : std_logic;
-   signal MemAdr_DUMMY  : std_logic_vector (23 downto 1);
-   signal RamCre_DUMMY  : std_logic;
-   signal RamClk_DUMMY  : std_logic;
+   signal XLXN_1487     : std_logic_vector (7 downto 0) := (others => '0');
+   signal XLXN_1488     : std_logic := '0';
+   signal XLXN_1526     : std_logic_vector (7 downto 0) := (others => '0');
+   signal XLXN_1527     : std_logic := '0';
+   signal XLXN_1579     : std_logic := '0';
+   signal XLXN_1747     : std_logic_vector (3 downto 0) := (others => '0');
+   signal XLXN_1748     : std_logic_vector (3 downto 0) := (others => '0');
+   signal XLXN_1749     : std_logic_vector (3 downto 0) := (others => '0');
+   signal XLXN_1750     : std_logic := '0';
+   signal XLXN_1751     : std_logic := '0';
+   signal XLXN_1848     : std_logic_vector (3 downto 0) := (others => '0');
+   signal XLXN_1849     : std_logic := '0';
+   signal XLXN_1852     : std_logic_vector (6 downto 0) := (others => '0');
+   signal XLXN_1882     : std_logic := '0';
+   signal XLXN_1902     : std_logic := '0';
+   signal XLXN_1938     : std_logic := '0';
+   signal XLXN_1939     : std_logic_vector (6 downto 0) := (others => '0');
+   signal XLXN_1940     : std_logic_vector (3 downto 0) := (others => '0');
+   signal XLXN_1944     : std_logic_vector (7 downto 0) := (others => '0');
+   signal XLXN_1947     : std_logic := '0';
+   signal XLXN_1948     : std_logic := '0';
+   signal XLXN_1949     : std_logic := '0';
+   signal XLXN_2184     : std_logic_vector (7 downto 0) := (others => '0');
+   signal XLXN_2186     : std_logic_vector (7 downto 0) := (others => '0');
+   signal XLXN_2187     : std_logic_vector (7 downto 0) := (others => '0');
+   signal XLXN_2196     : std_logic_vector (7 downto 0) := (others => '0');
+   signal XLXN_2212     : std_logic_vector (47 downto 0) := (others => '0');
+   signal XLXN_2230     : std_logic_vector (7 downto 0) := (others => '0');
+   signal XLXN_2235     : std_logic := '0';
+   signal XLXN_2236     : std_logic := '0';
+   signal XLXN_2237     : std_logic := '0';
+   signal XLXN_2238     : std_logic := '0';
+   signal XLXN_2239     : std_logic := '0';
+   signal XLXN_2252     : std_logic := '0';
+   signal XLXN_2549     : std_logic_vector (7 downto 0) := (others => '0');
+   signal XLXN_2550     : std_logic_vector (1 downto 0) := (others => '0');
+   signal XLXN_2570     : std_logic := '0';
+   signal RamLB_DUMMY   : std_logic := '0';
+   signal MemOe_DUMMY   : std_logic := '0';
+   signal RamAdv_DUMMY  : std_logic := '0';
+   signal FlashRp_DUMMY : std_logic := '0';
+   signal RamUB_DUMMY   : std_logic := '0';
+   signal RamCS_DUMMY   : std_logic := '0';
+   signal MemWr_DUMMY   : std_logic := '0';
+   signal FlashCS_DUMMY : std_logic := '0';
+   signal MemAdr_DUMMY  : std_logic_vector (23 downto 1) := (others => '0');
+   signal RamCre_DUMMY  : std_logic := '0';
+   signal RamClk_DUMMY  : std_logic := '0';
    component BlockRamCtrl
       port ( UsbClk       : in    std_logic; 
              UsbDBOut     : out   std_logic_vector (7 downto 0); 
@@ -674,7 +677,7 @@ begin
                 HandShakeReqIn=>XLXN_1948,
                 busEppOut(7 downto 0)=>XLXN_2184(7 downto 0),
                 ctlEppDwrOut=>XLXN_2252,
-                ctlEppStartOut=>XLXN_1579,
+                ctlEppStartOut=>XLXN_1579, -- xxx XLXN_1579 memctrl ctlMsmStartIn (ctlEppStartOut <= '1' when stEppCur = stEppLaunchProc else '0';)
                 EppDBOut(7 downto 0)=>XLXN_1526(7 downto 0),
                 EppWait=>XLXN_1527,
                 ctlEppRdCycleOut=>XLXN_1947,
@@ -685,7 +688,7 @@ begin
                 ComponentSelect=>XLXN_2239,
                 ctlEppRdCycleIn=>XLXN_1947,
                 ctlMsmDwrIn=>XLXN_2252,
-                ctlMsmStartIn=>XLXN_1938,
+                ctlMsmStartIn=>XLXN_1938, -- xxx gnd
                 EppWrDataIn(7 downto 0)=>XLXN_2184(7 downto 0),
                 FlashStSts=>FlashStSts,
                 RamWait=>RamWait,
@@ -780,7 +783,7 @@ begin
                 ComponentSelect=>XLXN_2238,
                 ctlEppRdCycleIn=>XLXN_1947,
                 ctlMsmDwrIn=>XLXN_2252,
-                ctlMsmStartIn=>XLXN_1579,
+                ctlMsmStartIn=>XLXN_1579, -- xxx eppctrl
                 EppWrDataIn(7 downto 0)=>XLXN_2184(7 downto 0),
                 FlashStSts=>FlashStSts,
                 RamWait=>RamWait,
@@ -790,7 +793,7 @@ begin
                 FlashByte=>open,
                 FlashCS=>FlashCS_DUMMY,
                 FlashRp=>FlashRp_DUMMY,
-                HandShakeReqOut=>XLXN_1948,
+                HandShakeReqOut=>XLXN_1948, -- xxx eppctrl
                 MemAdr(23 downto 1)=>MemAdr_DUMMY(23 downto 1),
                 MemCtrlEnabled=>open,
                 MemOE=>MemOe_DUMMY,

@@ -37,7 +37,7 @@ end ShiftReg;
 
 architecture Behavioral of ShiftReg is
 
-signal ShiftReg6: std_logic_vector(47 downto 0); 
+signal ShiftReg6: std_logic_vector(47 downto 0) := (others => '0');
 begin
 
 -- Shift register 6 bytes	

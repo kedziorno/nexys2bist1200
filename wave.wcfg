@@ -1,0 +1,1151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/user/workspace/nexys2bist1200/tb_1_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="demowithmemcfg_demowithmemcfg_sch_tb" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="textio" />
+            <top_module name="vcomponents" />
+            <top_module name="vital_primitives" />
+            <top_module name="vital_timing" />
+            <top_module name="vpkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="group118" type="group">
+      <obj_property name="label">demo</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/usbclk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbclk</obj_property>
+         <obj_property name="ObjectShortName">usbclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/an" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">an[3:0]</obj_property>
+         <obj_property name="ObjectShortName">an[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/seg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">seg[6:0]</obj_property>
+         <obj_property name="ObjectShortName">seg[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="group408" type="group">
+         <obj_property name="label">usb</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/usbdb" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">usbdb[7:0]</obj_property>
+            <obj_property name="ObjectShortName">usbdb[7:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/usbadr" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">usbadr[1:0]</obj_property>
+            <obj_property name="ObjectShortName">usbadr[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/usbflag" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">usbflag</obj_property>
+            <obj_property name="ObjectShortName">usbflag</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/usbmode" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">usbmode</obj_property>
+            <obj_property name="ObjectShortName">usbmode</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/usbdir" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">usbdir</obj_property>
+            <obj_property name="ObjectShortName">usbdir</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/usbpktend" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">usbpktend</obj_property>
+            <obj_property name="ObjectShortName">usbpktend</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/usbwr" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">usbwr</obj_property>
+            <obj_property name="ObjectShortName">usbwr</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/usboe" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">usboe</obj_property>
+            <obj_property name="ObjectShortName">usboe</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group409" type="group">
+         <obj_property name="label">epp</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/eppdstb" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">eppdstb</obj_property>
+            <obj_property name="ObjectShortName">eppdstb</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/eppastb" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">eppastb</obj_property>
+            <obj_property name="ObjectShortName">eppastb</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/eppwait" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">eppwait</obj_property>
+            <obj_property name="ObjectShortName">eppwait</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group407" type="group">
+         <obj_property name="label">ram</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/ramcs" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">ramcs</obj_property>
+            <obj_property name="ObjectShortName">ramcs</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/flashcs" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">flashcs</obj_property>
+            <obj_property name="ObjectShortName">flashcs</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/memwr" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">memwr</obj_property>
+            <obj_property name="ObjectShortName">memwr</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/memoe" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">memoe</obj_property>
+            <obj_property name="ObjectShortName">memoe</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/ramub" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">ramub</obj_property>
+            <obj_property name="ObjectShortName">ramub</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/ramlb" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">ramlb</obj_property>
+            <obj_property name="ObjectShortName">ramlb</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/ramcre" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">ramcre</obj_property>
+            <obj_property name="ObjectShortName">ramcre</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/ramadv" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">ramadv</obj_property>
+            <obj_property name="ObjectShortName">ramadv</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/ramclk" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">ramclk</obj_property>
+            <obj_property name="ObjectShortName">ramclk</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/ramwait" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">ramwait</obj_property>
+            <obj_property name="ObjectShortName">ramwait</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/flashrp" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">flashrp</obj_property>
+            <obj_property name="ObjectShortName">flashrp</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/flashststs" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">flashststs</obj_property>
+            <obj_property name="ObjectShortName">flashststs</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/memadr" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">memadr[23:1]</obj_property>
+            <obj_property name="ObjectShortName">memadr[23:1]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/memdb" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">memdb[15:0]</obj_property>
+            <obj_property name="ObjectShortName">memdb[15:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group427" type="group">
+      <obj_property name="label">eppctrl</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/eppdbin" type="array" db_ref_id="1">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">eppdbin[7:0]</obj_property>
+         <obj_property name="ObjectShortName">eppdbin[7:0]</obj_property>
+         <obj_property name="label">eppdbin[7:0] - usbdb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/eppwr" type="logic" db_ref_id="1">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">eppwr</obj_property>
+         <obj_property name="ObjectShortName">eppwr</obj_property>
+         <obj_property name="label">eppwr - usbflag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/epprst" type="logic" db_ref_id="1">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">epprst</obj_property>
+         <obj_property name="ObjectShortName">epprst</obj_property>
+         <obj_property name="label">epprst - UsbMode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/eppastb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">eppastb</obj_property>
+         <obj_property name="ObjectShortName">eppastb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/eppdstb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">eppdstb</obj_property>
+         <obj_property name="ObjectShortName">eppdstb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/steppcur" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">steppcur</obj_property>
+         <obj_property name="ObjectShortName">steppcur</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/ctleppawr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctleppawr</obj_property>
+         <obj_property name="ObjectShortName">ctleppawr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/handshakereqin" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">handshakereqin</obj_property>
+         <obj_property name="ObjectShortName">handshakereqin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/ctleppdwrout" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctleppdwrout</obj_property>
+         <obj_property name="ObjectShortName">ctleppdwrout</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/eppwait" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">eppwait</obj_property>
+         <obj_property name="ObjectShortName">eppwait</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/eppdbout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">eppdbout[7:0]</obj_property>
+         <obj_property name="ObjectShortName">eppdbout[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/buseppout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">buseppout[7:0]</obj_property>
+         <obj_property name="ObjectShortName">buseppout[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/buseppin" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">buseppin[7:0]</obj_property>
+         <obj_property name="ObjectShortName">buseppin[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/regeppadrout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regeppadrout[7:0]</obj_property>
+         <obj_property name="ObjectShortName">regeppadrout[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/buseppinternal" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">buseppinternal[7:0]</obj_property>
+         <obj_property name="ObjectShortName">buseppinternal[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/ctlepprdcycleout" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlepprdcycleout</obj_property>
+         <obj_property name="ObjectShortName">ctlepprdcycleout</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/ctleppdonein" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctleppdonein</obj_property>
+         <obj_property name="ObjectShortName">ctleppdonein</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instEppCtrl/ctleppstartout" type="logic" db_ref_id="1">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">ctleppstartout</obj_property>
+         <obj_property name="ObjectShortName">ctleppstartout</obj_property>
+         <obj_property name="label">ctleppstartout</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group197" type="group">
+      <obj_property name="label">memctrl</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmsmstartin" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmstartin</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmstartin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmsmdoneout" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmdoneout</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmdoneout</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmcroe" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmcroe</obj_property>
+         <obj_property name="ObjectShortName">ctlmcroe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmcrflashcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmcrflashcs</obj_property>
+         <obj_property name="ObjectShortName">ctlmcrflashcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/regmemctl" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regmemctl[7:0]</obj_property>
+         <obj_property name="ObjectShortName">regmemctl[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/stmsmcur" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">stmsmcur[3:0]</obj_property>
+         <obj_property name="ObjectShortName">stmsmcur[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/stmsmnext" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">stmsmnext[3:0]</obj_property>
+         <obj_property name="ObjectShortName">stmsmnext[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/componentselect" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">componentselect</obj_property>
+         <obj_property name="ObjectShortName">componentselect</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/regeppadrin" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regeppadrin[7:0]</obj_property>
+         <obj_property name="ObjectShortName">regeppadrin[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/handshakereqout" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">handshakereqout</obj_property>
+         <obj_property name="ObjectShortName">handshakereqout</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlepprdcyclein" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlepprdcyclein</obj_property>
+         <obj_property name="ObjectShortName">ctlepprdcyclein</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmsmdwrin" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmdwrin</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmdwrin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/epprddataout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">epprddataout[7:0]</obj_property>
+         <obj_property name="ObjectShortName">epprddataout[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/eppwrdatain" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">eppwrdatain[7:0]</obj_property>
+         <obj_property name="ObjectShortName">eppwrdatain[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/memdb" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">memdb[15:0]</obj_property>
+         <obj_property name="ObjectShortName">memdb[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/memadr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">memadr[23:1]</obj_property>
+         <obj_property name="ObjectShortName">memadr[23:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/flashbyte" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashbyte</obj_property>
+         <obj_property name="ObjectShortName">flashbyte</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ramcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramcs</obj_property>
+         <obj_property name="ObjectShortName">ramcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/flashcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashcs</obj_property>
+         <obj_property name="ObjectShortName">flashcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/memwr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">memwr</obj_property>
+         <obj_property name="ObjectShortName">memwr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/memoe" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">memoe</obj_property>
+         <obj_property name="ObjectShortName">memoe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ramub" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramub</obj_property>
+         <obj_property name="ObjectShortName">ramub</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ramlb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramlb</obj_property>
+         <obj_property name="ObjectShortName">ramlb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ramcre" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramcre</obj_property>
+         <obj_property name="ObjectShortName">ramcre</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ramadv" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramadv</obj_property>
+         <obj_property name="ObjectShortName">ramadv</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ramclk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramclk</obj_property>
+         <obj_property name="ObjectShortName">ramclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ramwait" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramwait</obj_property>
+         <obj_property name="ObjectShortName">ramwait</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/flashrp" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashrp</obj_property>
+         <obj_property name="ObjectShortName">flashrp</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/flashststs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashststs</obj_property>
+         <obj_property name="ObjectShortName">flashststs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/memctrlenabled" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">memctrlenabled</obj_property>
+         <obj_property name="ObjectShortName">memctrlenabled</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/delaycnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">delaycnt[4:0]</obj_property>
+         <obj_property name="ObjectShortName">delaycnt[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/regmemadr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regmemadr[23:0]</obj_property>
+         <obj_property name="ObjectShortName">regmemadr[23:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/regmemadr" type="array" db_ref_id="1">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">regmemadr[23:0]</obj_property>
+         <obj_property name="ObjectShortName">regmemadr[23:0]</obj_property>
+         <obj_property name="label">regmemadr[23:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/carryoutl" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">carryoutl</obj_property>
+         <obj_property name="ObjectShortName">carryoutl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/carryoutm" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">carryoutm</obj_property>
+         <obj_property name="ObjectShortName">carryoutm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/regmemwrdata" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regmemwrdata[15:0]</obj_property>
+         <obj_property name="ObjectShortName">regmemwrdata[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/regmemrddata" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regmemrddata[7:0]</obj_property>
+         <obj_property name="ObjectShortName">regmemrddata[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/regmemrddataaux" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regmemrddataaux[7:0]</obj_property>
+         <obj_property name="ObjectShortName">regmemrddataaux[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/busmemin" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">busmemin[15:0]</obj_property>
+         <obj_property name="ObjectShortName">busmemin[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/busmemout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">busmemout[15:0]</obj_property>
+         <obj_property name="ObjectShortName">busmemout[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmcroe" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmcroe</obj_property>
+         <obj_property name="ObjectShortName">ctlmcroe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmcrwr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmcrwr</obj_property>
+         <obj_property name="ObjectShortName">ctlmcrwr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmcrramcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmcrramcs</obj_property>
+         <obj_property name="ObjectShortName">ctlmcrramcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmcrflashcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmcrflashcs</obj_property>
+         <obj_property name="ObjectShortName">ctlmcrflashcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmcrenable" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmcrenable</obj_property>
+         <obj_property name="ObjectShortName">ctlmcrenable</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmcrword" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmcrword</obj_property>
+         <obj_property name="ObjectShortName">ctlmcrword</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmcrdir" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmcrdir</obj_property>
+         <obj_property name="ObjectShortName">ctlmcrdir</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmsmoe" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmoe</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmoe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmsmwr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmwr</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmwr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmsmramcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmramcs</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmramcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmsmflashcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmflashcs</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmflashcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmsmdir" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmdir</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmdir</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmsmadrinc" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmadrinc</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmadrinc</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmsmwrcmd" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmwrcmd</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmwrcmd</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group281" type="group">
+      <obj_property name="label">memtest</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/handshakereqout" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">handshakereqout</obj_property>
+         <obj_property name="ObjectShortName">handshakereqout</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ctlmsmstartin" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmstartin</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmstartin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ctlmsmdoneout" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmdoneout</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmdoneout</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ctlmsmdwrin" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmdwrin</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmdwrin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ctlepprdcyclein" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlepprdcyclein</obj_property>
+         <obj_property name="ObjectShortName">ctlepprdcyclein</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/epprddataout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">epprddataout[7:0]</obj_property>
+         <obj_property name="ObjectShortName">epprddataout[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/eppwrdatain" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">eppwrdatain[7:0]</obj_property>
+         <obj_property name="ObjectShortName">eppwrdatain[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/regeppadrin" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regeppadrin[7:0]</obj_property>
+         <obj_property name="ObjectShortName">regeppadrin[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/componentselect" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">componentselect</obj_property>
+         <obj_property name="ObjectShortName">componentselect</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/memdb" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">memdb[15:0]</obj_property>
+         <obj_property name="ObjectShortName">memdb[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/memadr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">memadr[23:1]</obj_property>
+         <obj_property name="ObjectShortName">memadr[23:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/flashbyte" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashbyte</obj_property>
+         <obj_property name="ObjectShortName">flashbyte</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ramcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramcs</obj_property>
+         <obj_property name="ObjectShortName">ramcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/flashcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashcs</obj_property>
+         <obj_property name="ObjectShortName">flashcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/memwr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">memwr</obj_property>
+         <obj_property name="ObjectShortName">memwr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/memoe" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">memoe</obj_property>
+         <obj_property name="ObjectShortName">memoe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ramub" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramub</obj_property>
+         <obj_property name="ObjectShortName">ramub</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ramlb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramlb</obj_property>
+         <obj_property name="ObjectShortName">ramlb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ramcre" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramcre</obj_property>
+         <obj_property name="ObjectShortName">ramcre</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ramadv" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramadv</obj_property>
+         <obj_property name="ObjectShortName">ramadv</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ramclk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramclk</obj_property>
+         <obj_property name="ObjectShortName">ramclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ramwait" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramwait</obj_property>
+         <obj_property name="ObjectShortName">ramwait</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/flashrp" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashrp</obj_property>
+         <obj_property name="ObjectShortName">flashrp</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/flashststs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashststs</obj_property>
+         <obj_property name="ObjectShortName">flashststs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/testctrlenabled" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">testctrlenabled</obj_property>
+         <obj_property name="ObjectShortName">testctrlenabled</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/sttestcur" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sttestcur[3:0]</obj_property>
+         <obj_property name="ObjectShortName">sttestcur[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/sttestnext" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sttestnext[3:0]</obj_property>
+         <obj_property name="ObjectShortName">sttestnext[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/stmsmcur" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">stmsmcur[2:0]</obj_property>
+         <obj_property name="ObjectShortName">stmsmcur[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/stmsmnext" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">stmsmnext[2:0]</obj_property>
+         <obj_property name="ObjectShortName">stmsmnext[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/delaycnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">delaycnt[4:0]</obj_property>
+         <obj_property name="ObjectShortName">delaycnt[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/regmemadr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regmemadr[23:0]</obj_property>
+         <obj_property name="ObjectShortName">regmemadr[23:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/carryoutl" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">carryoutl</obj_property>
+         <obj_property name="ObjectShortName">carryoutl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/carryoutm" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">carryoutm</obj_property>
+         <obj_property name="ObjectShortName">carryoutm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/regmemwrdata" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regmemwrdata[15:0]</obj_property>
+         <obj_property name="ObjectShortName">regmemwrdata[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/regmemrddata" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regmemrddata[15:0]</obj_property>
+         <obj_property name="ObjectShortName">regmemrddata[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/busmemin" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">busmemin[15:0]</obj_property>
+         <obj_property name="ObjectShortName">busmemin[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/busmemout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">busmemout[15:0]</obj_property>
+         <obj_property name="ObjectShortName">busmemout[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ctlmsmoe" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmoe</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmoe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ctlmsmwr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmwr</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmwr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ctlmsmramcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmramcs</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmramcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ctlmsmflashcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmflashcs</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmflashcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ctlmsmdir" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmdir</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmdir</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ctlmsmwrcmd" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ctlmsmwrcmd</obj_property>
+         <obj_property name="ObjectShortName">ctlmsmwrcmd</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/flagtestrun" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flagtestrun</obj_property>
+         <obj_property name="ObjectShortName">flagtestrun</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/flagmsmwrcycle" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flagmsmwrcycle</obj_property>
+         <obj_property name="ObjectShortName">flagmsmwrcycle</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/flagrightcode" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flagrightcode</obj_property>
+         <obj_property name="ObjectShortName">flagrightcode</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group304" type="group">
+      <obj_property name="label">blockram</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/usbclk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbclk</obj_property>
+         <obj_property name="ObjectShortName">usbclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/usbmode" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbmode</obj_property>
+         <obj_property name="ObjectShortName">usbmode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/usbdir" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbdir</obj_property>
+         <obj_property name="ObjectShortName">usbdir</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/usboe" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usboe</obj_property>
+         <obj_property name="ObjectShortName">usboe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/usbrd" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbrd</obj_property>
+         <obj_property name="ObjectShortName">usbrd</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/usbwr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbwr</obj_property>
+         <obj_property name="ObjectShortName">usbwr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/usbpktend" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbpktend</obj_property>
+         <obj_property name="ObjectShortName">usbpktend</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/usbflag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbflag</obj_property>
+         <obj_property name="ObjectShortName">usbflag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/usbadr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">usbadr[1:0]</obj_property>
+         <obj_property name="ObjectShortName">usbadr[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/usbdbin" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">usbdbin[7:0]</obj_property>
+         <obj_property name="ObjectShortName">usbdbin[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/usbdbout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">usbdbout[7:0]</obj_property>
+         <obj_property name="ObjectShortName">usbdbout[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/stream6bytes" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">stream6bytes[47:0]</obj_property>
+         <obj_property name="ObjectShortName">stream6bytes[47:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/state" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">state</obj_property>
+         <obj_property name="ObjectShortName">state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/next_state" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">next_state</obj_property>
+         <obj_property name="ObjectShortName">next_state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/streamadr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">streamadr[14:0]</obj_property>
+         <obj_property name="ObjectShortName">streamadr[14:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/streamlen" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">streamlen[31:0]</obj_property>
+         <obj_property name="ObjectShortName">streamlen[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/adrcounter" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">adrcounter[14:0]</obj_property>
+         <obj_property name="ObjectShortName">adrcounter[14:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/bytecounter" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">bytecounter[31:0]</obj_property>
+         <obj_property name="ObjectShortName">bytecounter[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/ramdo" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ramdo[7:0]</obj_property>
+         <obj_property name="ObjectShortName">ramdo[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/iusbop" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">iusbop</obj_property>
+         <obj_property name="ObjectShortName">iusbop</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/ramwr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramwr</obj_property>
+         <obj_property name="ObjectShortName">ramwr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instBlockRamCtrl/counterzero" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">counterzero</obj_property>
+         <obj_property name="ObjectShortName">counterzero</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group399" type="group">
+      <obj_property name="label">uut</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/memadr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">memadr[23:1]</obj_property>
+         <obj_property name="ObjectShortName">memadr[23:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/memdb" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">memdb[15:0]</obj_property>
+         <obj_property name="ObjectShortName">memdb[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/btn" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">btn[3:0]</obj_property>
+         <obj_property name="ObjectShortName">btn[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/eppastb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">eppastb</obj_property>
+         <obj_property name="ObjectShortName">eppastb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/eppdstb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">eppdstb</obj_property>
+         <obj_property name="ObjectShortName">eppdstb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/flashststs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashststs</obj_property>
+         <obj_property name="ObjectShortName">flashststs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramwait" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramwait</obj_property>
+         <obj_property name="ObjectShortName">ramwait</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/rsrx" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rsrx</obj_property>
+         <obj_property name="ObjectShortName">rsrx</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/sw" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sw[7:0]</obj_property>
+         <obj_property name="ObjectShortName">sw[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/usbclk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbclk</obj_property>
+         <obj_property name="ObjectShortName">usbclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/usbdir" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbdir</obj_property>
+         <obj_property name="ObjectShortName">usbdir</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/usbflag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbflag</obj_property>
+         <obj_property name="ObjectShortName">usbflag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/usbmode" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbmode</obj_property>
+         <obj_property name="ObjectShortName">usbmode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/an" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">an[3:0]</obj_property>
+         <obj_property name="ObjectShortName">an[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/dp" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dp</obj_property>
+         <obj_property name="ObjectShortName">dp</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/eppwait" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">eppwait</obj_property>
+         <obj_property name="ObjectShortName">eppwait</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/flashcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashcs</obj_property>
+         <obj_property name="ObjectShortName">flashcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/flashrp" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashrp</obj_property>
+         <obj_property name="ObjectShortName">flashrp</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/hsync" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">hsync</obj_property>
+         <obj_property name="ObjectShortName">hsync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/led" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">led[7:0]</obj_property>
+         <obj_property name="ObjectShortName">led[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/memoe" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">memoe</obj_property>
+         <obj_property name="ObjectShortName">memoe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/memwr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">memwr</obj_property>
+         <obj_property name="ObjectShortName">memwr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramadv" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramadv</obj_property>
+         <obj_property name="ObjectShortName">ramadv</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramclk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramclk</obj_property>
+         <obj_property name="ObjectShortName">ramclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramcre" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramcre</obj_property>
+         <obj_property name="ObjectShortName">ramcre</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramcs</obj_property>
+         <obj_property name="ObjectShortName">ramcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramlb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramlb</obj_property>
+         <obj_property name="ObjectShortName">ramlb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramub" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramub</obj_property>
+         <obj_property name="ObjectShortName">ramub</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/seg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">seg[6:0]</obj_property>
+         <obj_property name="ObjectShortName">seg[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/usbadr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">usbadr[1:0]</obj_property>
+         <obj_property name="ObjectShortName">usbadr[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/usboe" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usboe</obj_property>
+         <obj_property name="ObjectShortName">usboe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/usbpktend" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbpktend</obj_property>
+         <obj_property name="ObjectShortName">usbpktend</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/usbwr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">usbwr</obj_property>
+         <obj_property name="ObjectShortName">usbwr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/vgablue" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">vgablue[2:1]</obj_property>
+         <obj_property name="ObjectShortName">vgablue[2:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/vgagreen" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">vgagreen[2:0]</obj_property>
+         <obj_property name="ObjectShortName">vgagreen[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/vgared" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">vgared[2:0]</obj_property>
+         <obj_property name="ObjectShortName">vgared[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/vsync" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">vsync</obj_property>
+         <obj_property name="ObjectShortName">vsync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/pio" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">pio[67:0]</obj_property>
+         <obj_property name="ObjectShortName">pio[67:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ps2c" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ps2c</obj_property>
+         <obj_property name="ObjectShortName">ps2c</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ps2d" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ps2d</obj_property>
+         <obj_property name="ObjectShortName">ps2d</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/rstx" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rstx</obj_property>
+         <obj_property name="ObjectShortName">rstx</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/usbdb" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">usbdb[7:0]</obj_property>
+         <obj_property name="ObjectShortName">usbdb[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1487" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1487[7:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1487[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1488" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1488</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1488</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1526" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1526[7:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1526[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1527" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1527</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1527</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1579" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1579</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1579</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1747" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1747[3:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1747[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1748" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1748[3:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1748[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1749" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1749[3:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1749[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1750" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1750</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1750</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1751" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1751</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1751</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1848" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1848[3:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1848[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1849" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1849</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1849</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1852" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1852[6:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1852[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1882" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1882</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1882</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1902" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1902</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1902</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1938" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1938</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1938</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1939" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1939[6:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1939[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1940" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1940[3:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1940[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1944" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1944[7:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1944[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1947" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1947</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1947</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1948" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1948</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1948</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_1949" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_1949</obj_property>
+         <obj_property name="ObjectShortName">xlxn_1949</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2184" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2184[7:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2184[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2186" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2186[7:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2186[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2187" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2187[7:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2187[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2196" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2196[7:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2196[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2212" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2212[47:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2212[47:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2230" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2230[7:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2230[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2235" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2235</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2235</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2236" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2236</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2236</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2237" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2237</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2237</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2238" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2238</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2238</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2239" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2239</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2239</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2252" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2252</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2252</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2549" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2549[7:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2549[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2550" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2550[1:0]</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2550[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/xlxn_2570" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">xlxn_2570</obj_property>
+         <obj_property name="ObjectShortName">xlxn_2570</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramlb_dummy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramlb_dummy</obj_property>
+         <obj_property name="ObjectShortName">ramlb_dummy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/memoe_dummy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">memoe_dummy</obj_property>
+         <obj_property name="ObjectShortName">memoe_dummy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramadv_dummy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramadv_dummy</obj_property>
+         <obj_property name="ObjectShortName">ramadv_dummy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/flashrp_dummy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashrp_dummy</obj_property>
+         <obj_property name="ObjectShortName">flashrp_dummy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramub_dummy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramub_dummy</obj_property>
+         <obj_property name="ObjectShortName">ramub_dummy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramcs_dummy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramcs_dummy</obj_property>
+         <obj_property name="ObjectShortName">ramcs_dummy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/memwr_dummy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">memwr_dummy</obj_property>
+         <obj_property name="ObjectShortName">memwr_dummy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/flashcs_dummy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flashcs_dummy</obj_property>
+         <obj_property name="ObjectShortName">flashcs_dummy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/memadr_dummy" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">memadr_dummy[23:1]</obj_property>
+         <obj_property name="ObjectShortName">memadr_dummy[23:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramcre_dummy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramcre_dummy</obj_property>
+         <obj_property name="ObjectShortName">ramcre_dummy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramclk_dummy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ramclk_dummy</obj_property>
+         <obj_property name="ObjectShortName">ramclk_dummy</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group434" type="group">
+      <obj_property name="label">compsel</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instCompSel/regeppadrin" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regeppadrin[7:0]</obj_property>
+         <obj_property name="ObjectShortName">regeppadrin[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instCompSel/cs80_9f" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cs80_9f</obj_property>
+         <obj_property name="ObjectShortName">cs80_9f</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instCompSel/cs0_7" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cs0_7</obj_property>
+         <obj_property name="ObjectShortName">cs0_7</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instCompSel/cs8_f" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cs8_f</obj_property>
+         <obj_property name="ObjectShortName">cs8_f</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instCompSel/cs10" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cs10</obj_property>
+         <obj_property name="ObjectShortName">cs10</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instCompSel/csb0" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">csb0</obj_property>
+         <obj_property name="ObjectShortName">csb0</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
