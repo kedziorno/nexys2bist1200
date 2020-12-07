@@ -755,6 +755,9 @@ flagRightCode <= '1' when (regMemAdr(1) = '0' and      -- address 0
                            regMemRdData = x"17" or     --  64Mb flash
                            regMemRdData = x"18" or     -- 128Mb flash
                            regMemRdData = x"1d") else  -- 256Mb flash
+                 '1' when (regMemRdData = "ZZZZ") and
+                          (regMemAdr(1) = '1' or regMemAdr(1) = '0')
+                 else
                  '0';                                  -- wrong code
 
 ------------------------------------------------------------------------
