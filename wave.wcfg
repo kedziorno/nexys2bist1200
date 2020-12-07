@@ -7,6 +7,7 @@
          <top_modules>
             <top_module name="demowithmemcfg_demowithmemcfg_sch_tb" />
             <top_module name="numeric_std" />
+            <top_module name="p_pkg1" />
             <top_module name="std_logic_1164" />
             <top_module name="std_logic_arith" />
             <top_module name="std_logic_unsigned" />
@@ -18,7 +19,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="7" />
+   <WVObjectSize size="8" />
    <wave_markers>
       <marker time="409590000000" label="" />
       <marker time="819210000000" label="" />
@@ -1169,6 +1170,150 @@
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instCompSel/csb0" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">csb0</obj_property>
          <obj_property name="ObjectShortName">csb0</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group367" type="group">
+      <obj_property name="label">c0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/i_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/i_rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">i_rst</obj_property>
+         <obj_property name="ObjectShortName">i_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/i_refresh" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">i_refresh</obj_property>
+         <obj_property name="ObjectShortName">i_refresh</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/i_char" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">i_char[0:7]</obj_property>
+         <obj_property name="ObjectShortName">i_char[0:7]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/io_sda" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">io_sda</obj_property>
+         <obj_property name="ObjectShortName">io_sda</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/io_scl" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">io_scl</obj_property>
+         <obj_property name="ObjectShortName">io_scl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/init_display" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">init_display[0:24]</obj_property>
+         <obj_property name="ObjectShortName">init_display[0:24]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/set_coordination" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">set_coordination[0:5]</obj_property>
+         <obj_property name="ObjectShortName">set_coordination[0:5]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/i2c_ena" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">i2c_ena</obj_property>
+         <obj_property name="ObjectShortName">i2c_ena</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/i2c_addr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">i2c_addr[6:0]</obj_property>
+         <obj_property name="ObjectShortName">i2c_addr[6:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/i2c_rw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">i2c_rw</obj_property>
+         <obj_property name="ObjectShortName">i2c_rw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/i2c_data_wr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">i2c_data_wr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i2c_data_wr[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/i2c_busy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">i2c_busy</obj_property>
+         <obj_property name="ObjectShortName">i2c_busy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/i2c_reset" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">i2c_reset</obj_property>
+         <obj_property name="ObjectShortName">i2c_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/busy_prev" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">busy_prev</obj_property>
+         <obj_property name="ObjectShortName">busy_prev</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/busy_cnt" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">busy_cnt</obj_property>
+         <obj_property name="ObjectShortName">busy_cnt</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/index_character" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">index_character</obj_property>
+         <obj_property name="ObjectShortName">index_character</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/current_character" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">current_character[7:0]</obj_property>
+         <obj_property name="ObjectShortName">current_character[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/c_state" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">c_state</obj_property>
+         <obj_property name="ObjectShortName">c_state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/n_state" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">n_state</obj_property>
+         <obj_property name="ObjectShortName">n_state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/glcdfont_character" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">glcdfont_character[7:0]</obj_property>
+         <obj_property name="ObjectShortName">glcdfont_character[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/glcdfont_index" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">glcdfont_index[11:0]</obj_property>
+         <obj_property name="ObjectShortName">glcdfont_index[11:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/g_board_clock" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">g_board_clock</obj_property>
+         <obj_property name="ObjectShortName">g_board_clock</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/g_bus_clock" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">g_bus_clock</obj_property>
+         <obj_property name="ObjectShortName">g_bus_clock</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/gclk" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">gclk</obj_property>
+         <obj_property name="ObjectShortName">gclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/bclk" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">bclk</obj_property>
+         <obj_property name="ObjectShortName">bclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/oled_width" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">oled_width</obj_property>
+         <obj_property name="ObjectShortName">oled_width</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/oled_height" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">oled_height</obj_property>
+         <obj_property name="ObjectShortName">oled_height</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/oled_pages_all" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">oled_pages_all</obj_property>
+         <obj_property name="ObjectShortName">oled_pages_all</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/oled_data" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">oled_data</obj_property>
+         <obj_property name="ObjectShortName">oled_data</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/oled_command" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">oled_command</obj_property>
+         <obj_property name="ObjectShortName">oled_command</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/ni_init" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">ni_init</obj_property>
+         <obj_property name="ObjectShortName">ni_init</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/ni_set_coordination" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">ni_set_coordination</obj_property>
+         <obj_property name="ObjectShortName">ni_set_coordination</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

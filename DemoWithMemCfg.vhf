@@ -267,6 +267,7 @@ use ieee.std_logic_1164.ALL;
 use ieee.numeric_std.ALL;
 library UNISIM;
 use UNISIM.Vcomponents.ALL;
+use WORK.p_pkg1.ALL;
 
 entity DemoWithMemCfg is
    port ( btn        : in    std_logic_vector (3 downto 0); 
@@ -311,10 +312,13 @@ entity DemoWithMemCfg is
           PS2C       : inout std_logic; 
           PS2D       : inout std_logic; 
           RsTx       : inout std_logic; 
-          UsbDB      : inout std_logic_vector (7 downto 0));
+          UsbDB      : inout std_logic_vector (7 downto 0);
+          SDA        : inout std_logic;
+          SCK        : inout std_logic);
 end DemoWithMemCfg;
 
 architecture BEHAVIORAL of DemoWithMemCfg is
+
    attribute BOX_TYPE   : string ;
    signal XLXN_1487     : std_logic_vector (7 downto 0) := (others => '0');
    signal XLXN_1488     : std_logic := '0';
@@ -364,6 +368,7 @@ architecture BEHAVIORAL of DemoWithMemCfg is
    signal MemAdr_DUMMY  : std_logic_vector (23 downto 1) := (others => '0');
    signal RamCre_DUMMY  : std_logic := '0';
    signal RamClk_DUMMY  : std_logic := '0';
+
    component BlockRamCtrl
       port ( UsbClk       : in    std_logic; 
              UsbDBOut     : out   std_logic_vector (7 downto 0); 
@@ -590,7 +595,21 @@ architecture BEHAVIORAL of DemoWithMemCfg is
    end component;
    attribute BOX_TYPE of VCC : component is "BLACK_BOX";
    
+   component oled_display is
+      generic ( g_board_clock : integer := 50_000_000;
+                g_bus_clock : integer := 100_000);
+      port ( signal i_clk : in std_logic;
+             signal i_rst : in std_logic;
+             signal i_refresh : in std_logic;
+             signal i_char : in array1;
+             signal io_sda,io_scl : inout std_logic);
+   end component oled_display;
+
+   constant TEXT_LENGTH : integer := 8;
+   signal text : array1(0 to TEXT_LENGTH-1) := (x"30",x"30",x"30",x"30",x"30",x"30",x"30",x"30");
+
 begin
+
    FlashCS <= FlashCS_DUMMY;
    FlashRp <= FlashRp_DUMMY;
    MemAdr(23 downto 1) <= MemAdr_DUMMY(23 downto 1);
@@ -602,6 +621,7 @@ begin
    RamCS <= RamCS_DUMMY;
    RamLB <= RamLB_DUMMY;
    RamUB <= RamUB_DUMMY;
+
    instBlockRamCtrl : BlockRamCtrl
       port map (Stream6Bytes(47 downto 0)=>XLXN_2212(47 downto 0),
                 UsbClk=>UsbClk,
@@ -809,6 +829,14 @@ begin
    XLXI_275 : VCC
       port map (P=>XLXN_2570);
    
+   c0 : oled_display
+      port map (i_clk => clk,
+                i_rst => XLXN_1527,
+                i_refresh => '0',
+                i_char => text,
+                io_sda => SDA,
+                io_scl => SCK);
+
 end BEHAVIORAL;
 
 
