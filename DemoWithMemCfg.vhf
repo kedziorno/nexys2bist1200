@@ -486,7 +486,8 @@ architecture BEHAVIORAL of DemoWithMemCfg is
              HandShakeReqOut : out   std_logic; 
              ctlMsmDoneOut   : out   std_logic; 
              regEppAdrIn     : in    std_logic_vector (7 downto 0); 
-             ComponentSelect : in    std_logic);
+             ComponentSelect : in    std_logic;
+             waitfordisplay  : in    std_logic);
    end component;
    
    component PinDrivers
@@ -602,11 +603,15 @@ architecture BEHAVIORAL of DemoWithMemCfg is
              signal i_rst : in std_logic;
              signal i_refresh : in std_logic;
              signal i_char : in array1;
+             signal o_display_ready : out std_logic;
+             signal o_busy : out std_logic;
              signal io_sda,io_scl : inout std_logic);
    end component oled_display;
 
    constant TEXT_LENGTH : integer := 8;
    signal text : array1(0 to TEXT_LENGTH-1) := (x"30",x"30",x"30",x"30",x"30",x"30",x"30",x"30");
+   signal o_display_ready : std_logic;
+   signal o_busy : std_logic;
 
 begin
 
@@ -705,10 +710,11 @@ begin
    
    instNexysOnBoardMemTest : NexysOnBoardMemTest
       port map (clk=>clk,
+                waitfordisplay=>o_busy,
                 ComponentSelect=>XLXN_2239,
                 ctlEppRdCycleIn=>XLXN_1947,
                 ctlMsmDwrIn=>XLXN_2252,
-                ctlMsmStartIn=>XLXN_1938, -- xxx gnd
+                ctlMsmStartIn=>o_display_ready,--XLXN_1938, -- xxx gnd
                 EppWrDataIn(7 downto 0)=>XLXN_2184(7 downto 0),
                 FlashStSts=>FlashStSts,
                 RamWait=>RamWait,
@@ -834,6 +840,8 @@ begin
                 i_rst => XLXN_1527,
                 i_refresh => '0',
                 i_char => text,
+                o_display_ready => o_display_ready,
+                o_busy => o_busy,
                 io_sda => SDA,
                 io_scl => SCK);
 

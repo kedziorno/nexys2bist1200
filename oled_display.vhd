@@ -33,6 +33,8 @@ signal i_clk : in std_logic;
 signal i_rst : in std_logic;
 signal i_refresh : in std_logic;
 signal i_char : in array1;
+signal o_display_ready : out std_logic;
+signal o_busy : out std_logic;
 signal io_sda,io_scl : inout std_logic
 );
 end oled_display;
@@ -42,8 +44,8 @@ architecture Behavioral of oled_display is
 constant GCLK : integer := g_board_clock;
 constant BCLK : integer := g_bus_clock;
 
-constant OLED_WIDTH : integer := 128;
-constant OLED_HEIGHT : integer := 32;
+constant OLED_WIDTH : integer := 64;
+constant OLED_HEIGHT : integer := 8;
 constant OLED_PAGES_ALL : integer := OLED_WIDTH * ((OLED_HEIGHT + 7) / 8);
 constant OLED_DATA : integer := to_integer(unsigned'(x"40"));
 constant OLED_COMMAND : integer := to_integer(unsigned'(x"00")); -- 00,80
@@ -122,11 +124,11 @@ type state is
 	start, -- initialize oled
 	set_address_1, -- set begin point 0,0
 	clear_display_state_1, -- clear display and power on
+	wait0,
 	set_address_2, -- set begin point 0,0
 	send_character, -- send the some data/text array
 	check_character_index, -- check have char
 	clear_display_state_2, -- clear display - rest after text
-	scroll_left,
 	stop -- when index=counter, i2c disable
 );
 signal c_state,n_state : state;
@@ -172,14 +174,19 @@ begin
 			n_state <= start;
 			busy_cnt <= 0;
 			index_character <= 0;
+			o_busy <= '0';
+			o_display_ready <= '0';
 		elsif (i_refresh = '1') then
 			n_state <= set_address_1;
 			busy_cnt <= 0;
 			index_character <= 0;
+			o_busy <= '0';
+			o_display_ready <= '0';
 		else
 			c_state <= n_state;
 			case c_state is
 				when start =>
+					o_display_ready <= '0';
 					busy_prev <= i2c_busy;
 					if (busy_prev = '0' and i2c_busy = '1') then
 						busy_cnt <= busy_cnt + 1;
@@ -239,10 +246,12 @@ begin
 							i2c_ena <= '0';
 							if (i2c_busy = '0') then
 								busy_cnt <= 0;
-								n_state <= set_address_2;
+								n_state <= wait0;
 							end if;
 						when others => null;
 					end case;
+				when wait0 =>
+					n_state <= set_address_2;
 				when set_address_2 =>
 					busy_prev <= i2c_busy;
 					if (busy_prev = '0' and i2c_busy = '1') then
@@ -265,6 +274,8 @@ begin
 						when others => null;
 					end case;
 				when send_character =>
+					o_busy <= '1';
+					o_display_ready <= '1';
 					busy_prev <= i2c_busy;
 					if (busy_prev = '0' and i2c_busy = '1') then
 						busy_cnt <= busy_cnt + 1;
@@ -351,7 +362,10 @@ begin
 						when others => null;
 					end case;
 				when stop =>
+					o_busy <= '0';
 					i2c_ena <= '0';
+					n_state <= wait0;
+					index_character <= 0;
 				when others => null;
 			end case;
 		end if;

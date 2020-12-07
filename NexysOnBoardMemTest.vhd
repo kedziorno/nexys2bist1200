@@ -182,7 +182,8 @@ entity NexysOnBoardMemTest is
 
 -- Display signals
         seg: out std_logic_vector(6 downto 0);
-        an:  out std_logic_vector(3 downto 0)
+        an:  out std_logic_vector(3 downto 0);
+        waitfordisplay : in std_logic
        );
 end NexysOnBoardMemTest;
 
@@ -599,7 +600,11 @@ ExpData:process(clk, stTestCur)	  -- Error flag
    case stTestCur is
 -- initial state
      when stTestReady =>
+      if (ctlMsmStartIn = '1') then
          stTestNext <= stTestWrRam;
+        else
+         stTestNext <= stTestReady;
+      end if;
 
 -- write RAM state
      when stTestWrRam =>

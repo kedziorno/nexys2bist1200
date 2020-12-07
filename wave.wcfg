@@ -21,8 +21,8 @@
    </db_ref_list>
    <WVObjectSize size="8" />
    <wave_markers>
-      <marker time="409590000000" label="" />
-      <marker time="819210000000" label="" />
+      <marker time="10212990000000" label="" />
+      <marker time="20071870000000" label="" />
    </wave_markers>
    <wvobject fp_name="group118" type="group">
       <obj_property name="label">demo</obj_property>
@@ -483,6 +483,10 @@
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/clk" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/waitfordisplay" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">waitfordisplay</obj_property>
+         <obj_property name="ObjectShortName">waitfordisplay</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/handshakereqout" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">handshakereqout</obj_property>
@@ -1192,6 +1196,14 @@
          <obj_property name="ObjectShortName">i_char[0:7]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/o_display_ready" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">o_display_ready</obj_property>
+         <obj_property name="ObjectShortName">o_display_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/o_busy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">o_busy</obj_property>
+         <obj_property name="ObjectShortName">o_busy</obj_property>
+      </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/io_sda" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">io_sda</obj_property>
          <obj_property name="ObjectShortName">io_sda</obj_property>
@@ -1201,8 +1213,8 @@
          <obj_property name="ObjectShortName">io_scl</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/init_display" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">init_display[0:24]</obj_property>
-         <obj_property name="ObjectShortName">init_display[0:24]</obj_property>
+         <obj_property name="ElementShortName">init_display[0:25]</obj_property>
+         <obj_property name="ObjectShortName">init_display[0:25]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/c0/set_coordination" type="array" db_ref_id="1">
