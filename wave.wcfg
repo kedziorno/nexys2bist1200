@@ -674,6 +674,11 @@
          <obj_property name="ElementShortName">flagrightcode</obj_property>
          <obj_property name="ObjectShortName">flagrightcode</obj_property>
       </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/cnttimer" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cnttimer[25:0]</obj_property>
+         <obj_property name="ObjectShortName">cnttimer[25:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="group304" type="group">
       <obj_property name="label">blockram</obj_property>

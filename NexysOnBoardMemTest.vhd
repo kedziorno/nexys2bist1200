@@ -876,6 +876,7 @@ anodeCtrl:process(cntDisp)
   end process;
 
 cathodeCtrl:process(cntDisp)
+variable t_regMemData_z: std_logic_vector(15 downto 0) := (others => 'Z');
   begin  
     if stTestCur = stTestWrRam or
        stTestCur = stTestRdRam or
@@ -952,7 +953,7 @@ cathodeCtrl:process(cntDisp)
      end if;
 
     elsif stTestCur = stTestPassed2 and
-          regMemRdData = x"16" then
+          (regMemRdData = x"16" or regMemRdData = t_regMemData_z) then
      if cntDisp ="11" then
       seg <= "1111111"; -- blank
      elsif cntDisp ="10" then
@@ -964,7 +965,7 @@ cathodeCtrl:process(cntDisp)
      end if;
 
     elsif stTestCur = stTestPassed2 and
-          regMemRdData = x"17" then
+          (regMemRdData = x"17" or regMemRdData = t_regMemData_z) then
      if cntDisp ="11" then
       seg <= "1111111"; -- blank
      elsif cntDisp ="10" then
@@ -976,7 +977,7 @@ cathodeCtrl:process(cntDisp)
      end if;
 
     elsif stTestCur = stTestPassed2 and
-          regMemRdData = x"18" then
+          (regMemRdData = x"18" or regMemRdData = t_regMemData_z) then
      if cntDisp ="11" then
       seg <= "1111111"; -- blank
      elsif cntDisp ="10" then
@@ -988,7 +989,7 @@ cathodeCtrl:process(cntDisp)
      end if;
 
     elsif stTestCur = stTestPassed2 and
-          regMemRdData = x"1d" then
+          (regMemRdData = x"1d" or regMemRdData = t_regMemData_z) then
      if cntDisp ="11" then
       seg <= "1111111"; -- blank
      elsif cntDisp ="10" then
