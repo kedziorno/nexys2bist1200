@@ -323,7 +323,8 @@ signal flagTestRun: std_logic := '0';    -- '1' => Memory Test running
 signal flagMsmWrCycle: std_logic := '0'; -- '1' => Write cycle in progress
 signal flagRightCode: std_logic := '0';  -- '1' => Right QRY ir ID code
 
-constant maxMemAdr: std_logic_vector (23 downto 0) := x"7ffffe";
+--constant maxMemAdr: std_logic_vector (23 downto 0) := x"7ffffe";
+constant maxMemAdr: std_logic_vector (23 downto 0) := x"000ffe";
 type typestrQRY is array(0 to 2) of std_logic_vector(15 downto 0);
 constant strQRY: typestrQRY :=     (x"0051",    --Q
                                     x"0052",    --R
@@ -592,6 +593,7 @@ ExpData:process(clk, stTestCur)	  -- Error flag
   end process;
 
  process (clk,stTestCur)
+  variable t_regMemData_z: std_logic_vector(15 downto 0) := (others => 'Z');
   begin
 
    case stTestCur is
@@ -611,7 +613,7 @@ ExpData:process(clk, stTestCur)	  -- Error flag
 -- read RAM state
      when stTestRdRam =>
        if stMsmCur = stMsmAdInc then    -- between mem cycles
-         if regMemRdData /= regMemWrData then -- wrong data
+         if regMemRdData /= regMemWrData and regMemRdData /= t_regMemData_z then -- wrong data
            stTestNext <= stTestFailedRam1;
          elsif regMemAdr = maxMemAdr then      -- RAM read done
            stTestNext <= stTestWrFlash1;
@@ -633,7 +635,7 @@ ExpData:process(clk, stTestCur)	  -- Error flag
 -- read Flash QRY Code
      when stTestRdFlash1 =>
        if stMsmCur = stMsmAdInc then    -- between mem cycles
-         if regMemRdData /= regMemWrData then -- wrong
+         if regMemRdData /= regMemWrData and regMemRdData /= t_regMemData_z then -- wrong
            stTestNext <= stTestFailedFlashQRY1;
          elsif CONV_INTEGER(regMemAdr(2 downto 1)) = strQRY'length - 1 then
                                                        -- QRY read done

@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="/home/user/workspace/nexys2bist1200/tb_1_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="/home/user/workspace/nexys2bist1200original/VideoRom_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="demowithmemcfg_demowithmemcfg_sch_tb" />
             <top_module name="numeric_std" />
@@ -19,6 +19,10 @@
       </db_ref>
    </db_ref_list>
    <WVObjectSize size="7" />
+   <wave_markers>
+      <marker time="409590000000" label="" />
+      <marker time="819210000000" label="" />
+   </wave_markers>
    <wvobject fp_name="group118" type="group">
       <obj_property name="label">demo</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -307,10 +311,12 @@
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/memdb" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">memdb[15:0]</obj_property>
          <obj_property name="ObjectShortName">memdb[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/memadr" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">memadr[23:1]</obj_property>
          <obj_property name="ObjectShortName">memadr[23:1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/flashbyte" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">flashbyte</obj_property>
@@ -406,10 +412,12 @@
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/busmemin" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">busmemin[15:0]</obj_property>
          <obj_property name="ObjectShortName">busmemin[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/busmemout" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">busmemout[15:0]</obj_property>
          <obj_property name="ObjectShortName">busmemout[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/XLXI_120/ctlmcroe" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">ctlmcroe</obj_property>
@@ -514,10 +522,12 @@
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/memdb" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">memdb[15:0]</obj_property>
          <obj_property name="ObjectShortName">memdb[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/memadr" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">memadr[23:1]</obj_property>
          <obj_property name="ObjectShortName">memadr[23:1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/flashbyte" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">flashbyte</obj_property>
@@ -598,6 +608,7 @@
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/regmemadr" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">regmemadr[23:0]</obj_property>
          <obj_property name="ObjectShortName">regmemadr[23:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/carryoutl" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">carryoutl</obj_property>
@@ -610,18 +621,22 @@
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/regmemwrdata" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">regmemwrdata[15:0]</obj_property>
          <obj_property name="ObjectShortName">regmemwrdata[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/regmemrddata" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">regmemrddata[15:0]</obj_property>
          <obj_property name="ObjectShortName">regmemrddata[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/busmemin" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">busmemin[15:0]</obj_property>
          <obj_property name="ObjectShortName">busmemin[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/busmemout" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">busmemout[15:0]</obj_property>
          <obj_property name="ObjectShortName">busmemout[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/ctlmsmoe" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">ctlmsmoe</obj_property>
@@ -762,10 +777,12 @@
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/memadr" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">memadr[23:1]</obj_property>
          <obj_property name="ObjectShortName">memadr[23:1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/memdb" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">memdb[15:0]</obj_property>
          <obj_property name="ObjectShortName">memdb[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/btn" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">btn[3:0]</obj_property>
@@ -1110,6 +1127,7 @@
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/memadr_dummy" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">memadr_dummy[23:1]</obj_property>
          <obj_property name="ObjectShortName">memadr_dummy[23:1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/ramcre_dummy" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">ramcre_dummy</obj_property>

@@ -191,7 +191,7 @@ i_clkusb_process :process
 	wait for i_clk_period;
 	eppastb <= '0';
 	eppdstb <= '0';
-	usbDB <= "00000111";
+	usbDB <= "00000000";
 	wait for i_clk_period;
 	usbmode <= '0';
 	wait for i_clk_period;
