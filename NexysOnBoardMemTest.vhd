@@ -221,14 +221,16 @@ signal stTestNext :std_logic_vector(3 downto 0);
  -- on either flash or RAM memory. 
  -- The states are such a way assigned that each transition
  -- changes a single state register bit (Grey code - like)
- constant stMsmAdInc: std_logic_vector(2 downto 0) := "010";
- constant stMsmDone : std_logic_vector(2 downto 0) := "110";
- constant stMsmDir01: std_logic_vector(2 downto 0) := "000";
- constant stMsmDWr02: std_logic_vector(2 downto 0) := "001";
- constant stMsmDir03: std_logic_vector(2 downto 0) := "011";
- constant stMsmDRd02: std_logic_vector(2 downto 0) := "100";
- constant stMsmDRd03: std_logic_vector(2 downto 0) := "101";
- constant stMsmDRd04: std_logic_vector(2 downto 0) := "111";
+ constant stMsmAdInc: std_logic_vector(3 downto 0) := "0010";
+ constant stMsmDone : std_logic_vector(3 downto 0) := "0110";
+ constant stMsmDir01: std_logic_vector(3 downto 0) := "0000";
+ constant stMsmDWr02: std_logic_vector(3 downto 0) := "0001";
+ constant stMsmDir03: std_logic_vector(3 downto 0) := "0011";
+ constant stMsmDRd02: std_logic_vector(3 downto 0) := "0100";
+ constant stMsmDRd03: std_logic_vector(3 downto 0) := "0101";
+ constant stMsmDRd04: std_logic_vector(3 downto 0) := "0111";
+ constant wait0: std_logic_vector(3 downto 0) := "1000";
+ constant wait1: std_logic_vector(3 downto 0) := "1100";
 
 -- Epp Data register addresses
 constant TestStatusReg:  std_logic_vector(2 downto 0) := "000"; 
@@ -249,8 +251,8 @@ constant MemDataRdH:   std_logic_vector(2 downto 0) := "111";
      --  7 Memory actual data (high) (read)
 
 -- State register and next state for the FSMs
-signal stMsmCur : std_logic_vector(2 downto 0) := stMsmDir01;
-signal stMsmNext : std_logic_vector(2 downto 0);
+signal stMsmCur : std_logic_vector(3 downto 0) := wait0;
+signal stMsmNext : std_logic_vector(3 downto 0);
 
 -- Counter used to generate delays
 signal DelayCnt : std_logic_vector(4 downto 0) := "00000";
@@ -324,8 +326,8 @@ signal flagTestRun: std_logic := '0';    -- '1' => Memory Test running
 signal flagMsmWrCycle: std_logic := '0'; -- '1' => Write cycle in progress
 signal flagRightCode: std_logic := '0';  -- '1' => Right QRY ir ID code
 
---constant maxMemAdr: std_logic_vector (23 downto 0) := x"7ffffe";
-constant maxMemAdr: std_logic_vector (23 downto 0) := x"000ffe";
+constant maxMemAdr: std_logic_vector (23 downto 0) := x"7ffffe";
+--constant maxMemAdr: std_logic_vector (23 downto 0) := x"0002fe";
 type typestrQRY is array(0 to 2) of std_logic_vector(15 downto 0);
 constant strQRY: typestrQRY :=     (x"0051",    --Q
                                     x"0052",    --R
@@ -781,6 +783,13 @@ flagRightCode <= '1' when (regMemAdr(1) = '0' and      -- address 0
 
    case stMsmCur is
 
+	when wait0 =>
+	    if (waitfordisplay='0') then
+		 stMsmNext <= wait0;
+		 else
+		 stMsmNext <= stMsmDir01;
+		 end if;
+
 -- direct access
      when stMsmDir01 =>
        if stTestCur = stTestReady then
@@ -822,11 +831,18 @@ flagRightCode <= '1' when (regMemAdr(1) = '0' and      -- address 0
          stMsmNext <= stMsmAdInc;
 
     when stMsmAdInc =>
-       stMsmNext <= stMsmDir01;
+       stMsmNext <= wait1;
+
+    when wait1 =>
+	    if (waitfordisplay='1') then
+		 stMsmNext <= wait1;
+		 else
+		 stMsmNext <= stMsmDone;
+		 end if;
 
     when stMsmDone =>                -- test ended
        if flagTestRun = '1' then
-         stMsmNext <= stMsmDir01;    -- recovering from unknown states
+         stMsmNext <= wait0;    -- recovering from unknown states
        else stMsmNext <= stMsmDone;
        end if;
 --     null;

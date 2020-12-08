@@ -23,6 +23,7 @@
    <wave_markers>
       <marker time="10212990000000" label="" />
       <marker time="20071870000000" label="" />
+      <marker time="20072030000000" label="" />
    </wave_markers>
    <wvobject fp_name="group118" type="group">
       <obj_property name="label">demo</obj_property>
@@ -605,6 +606,11 @@
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/stmsmnext" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">stmsmnext[2:0]</obj_property>
          <obj_property name="ObjectShortName">stmsmnext[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/delaycnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">delaycnt[4:0]</obj_property>
+         <obj_property name="ObjectShortName">delaycnt[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/demowithmemcfg_demowithmemcfg_sch_tb/UUT/instNexysOnBoardMemTest/delaycnt" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">delaycnt[4:0]</obj_property>
