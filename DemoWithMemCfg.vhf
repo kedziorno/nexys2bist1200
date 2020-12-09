@@ -244,7 +244,8 @@ architecture BEHAVIORAL of DemoWithMemCfg is
              ctlMsmDoneOut   : out   std_logic; 
              regEppAdrIn     : in    std_logic_vector (7 downto 0); 
              ComponentSelect : in    std_logic;
-             waitfordisplay  : in    std_logic);
+             waitfordisplay  : in    std_logic;
+             state_text      : out   array1(0 to OLED_CHARS_MAX-1));
    end component;
    
    component PinDrivers
@@ -369,7 +370,9 @@ architecture BEHAVIORAL of DemoWithMemCfg is
    end component oled_display;
 
    constant TEXT_LENGTH : integer := 8;
-   signal text : array1(0 to TEXT_LENGTH-1) := (x"30",x"30",x"30",x"30",x"30",x"30",x"30",x"30");
+   signal state_text : array1(0 to OLED_CHARS_MAX-1);
+   signal address_text : array1(0 to TEXT_LENGTH-1) := (x"30",x"30",x"30",x"30",x"30",x"30",x"30",x"30");
+   signal empty_text : array1(0 to 1) := (x"20",x"20");
    signal o_display_ready : std_logic;
    signal o_busy : std_logic;
 
@@ -462,7 +465,7 @@ begin
                 HandShakeReqIn=>XLXN_1948,
                 busEppOut(7 downto 0)=>XLXN_2184(7 downto 0),
                 ctlEppDwrOut=>XLXN_2252,
-                ctlEppStartOut=>XLXN_1579, -- xxx XLXN_1579 memctrl ctlMsmStartIn (ctlEppStartOut <= '1' when stEppCur = stEppLaunchProc else '0';)
+                ctlEppStartOut=>XLXN_1579,
                 EppDBOut(7 downto 0)=>XLXN_1526(7 downto 0),
                 EppWait=>XLXN_1527,
                 ctlEppRdCycleOut=>XLXN_1947,
@@ -471,6 +474,7 @@ begin
    instNexysOnBoardMemTest : NexysOnBoardMemTest
       port map (clk=>clk,
                 waitfordisplay=>o_busy,
+                state_text=>state_text,
                 ComponentSelect=>XLXN_2239,
                 ctlEppRdCycleIn=>XLXN_1947,
                 ctlMsmDwrIn=>XLXN_2252,
@@ -599,21 +603,21 @@ begin
       port map (i_clk => clk,
                 i_rst => XLXN_1527,
                 i_refresh => '0',
-                i_row0 => text,
-                i_row1 => text,
-                i_row2 => text,
-                i_row3 => text,
+                i_row0 => state_text,
+                i_row1 => address_text,
+                i_row2 => empty_text,
+                i_row3 => empty_text,
                 o_display_ready => o_display_ready,
                 o_busy => o_busy,
                 io_sda => SDA,
                 io_scl => SCK);
 
-   text(7) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(4 downto 1))),8));
-   text(6) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(8 downto 5))),8));
-   text(5) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(12 downto 9))),8));
-   text(4) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(16 downto 13))),8));
-   text(3) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(20 downto 17))),8));
-   text(2) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(23 downto 21))),8));
+   address_text(7) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(4 downto 1))),8));
+   address_text(6) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(8 downto 5))),8));
+   address_text(5) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(12 downto 9))),8));
+   address_text(4) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(16 downto 13))),8));
+   address_text(3) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(20 downto 17))),8));
+   address_text(2) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(23 downto 21))),8));
 
 end BEHAVIORAL;
 

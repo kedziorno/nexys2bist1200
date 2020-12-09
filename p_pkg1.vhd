@@ -11,6 +11,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 
 package p_pkg1 is
+	constant OLED_CHARS_MAX : integer := (128/8)-1;
 	type array1 is array(natural range <>) of std_logic_vector(7 downto 0);
 
 -- type <new_type> is

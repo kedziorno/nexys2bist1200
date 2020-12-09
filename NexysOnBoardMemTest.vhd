@@ -133,6 +133,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use ieee.numeric_std.all;
+use work.p_pkg1.all;
 
 entity NexysOnBoardMemTest is
   Port(
@@ -183,8 +184,9 @@ entity NexysOnBoardMemTest is
 -- Display signals
         seg: out std_logic_vector(6 downto 0);
         an:  out std_logic_vector(3 downto 0);
-        waitfordisplay : in std_logic
-       );
+        waitfordisplay : in std_logic;
+        state_text : out array1(0 to OLED_CHARS_MAX-1)
+        );
 end NexysOnBoardMemTest;
 
 architecture Behavioral of NexysOnBoardMemTest is
@@ -327,7 +329,7 @@ signal flagMsmWrCycle: std_logic := '0'; -- '1' => Write cycle in progress
 signal flagRightCode: std_logic := '0';  -- '1' => Right QRY ir ID code
 
 --constant maxMemAdr: std_logic_vector (23 downto 0) := x"7ffffe";
-constant maxMemAdr: std_logic_vector (23 downto 0) := x"00001e";
+constant maxMemAdr: std_logic_vector (23 downto 0) := x"0001fe";
 type typestrQRY is array(0 to 2) of std_logic_vector(15 downto 0);
 constant strQRY: typestrQRY :=     (x"0051",    --Q
                                     x"0052",    --R
@@ -342,7 +344,24 @@ alias cntDisp: std_logic_vector(1 downto 0) is cntTimer(16 downto 15);
 -- Module Implementation
 ------------------------------------------------------------------------
     
+signal OLED_STATUS_READY : array1(0 to OLED_CHARS_MAX-1) := (x"53",x"54",x"41",x"54",x"55",x"53",x"20",x"52",x"45",x"41",x"44",x"59",x"20",x"20",x"20");
+signal OLED_STATUS_RAM_RD : array1(0 to OLED_CHARS_MAX-1) := (x"53",x"54",x"41",x"54",x"55",x"53",x"20",x"52",x"41",x"4D",x"20",x"52",x"44",x"20",x"20");
+signal OLED_STATUS_RAM_WR : array1(0 to OLED_CHARS_MAX-1) := (x"53",x"54",x"41",x"54",x"55",x"53",x"20",x"52",x"41",x"4D",x"20",x"57",x"52",x"20",x"20");
+signal OLED_STATUS_FLASH_RD : array1(0 to OLED_CHARS_MAX-1) := (x"53",x"54",x"41",x"54",x"55",x"53",x"20",x"46",x"4B",x"41",x"53",x"46",x"20",x"52",x"44");
+signal OLED_STATUS_FLASH_WR : array1(0 to OLED_CHARS_MAX-1) := (x"53",x"54",x"41",x"54",x"55",x"53",x"20",x"46",x"4B",x"41",x"53",x"46",x"20",x"57",x"52");
+signal OLED_STATUS_PASSED : array1(0 to OLED_CHARS_MAX-1) := (x"53",x"54",x"41",x"54",x"55",x"53",x"20",x"50",x"41",x"53",x"53",x"45",x"44",x"20",x"20");
+signal OLED_STATUS_FAILED : array1(0 to OLED_CHARS_MAX-1) := (x"53",x"54",x"41",x"54",x"55",x"53",x"20",x"46",x"41",x"48",x"4B",x"45",x"44",x"20",x"20");
+
 begin
+
+with stTestCur select
+	state_text <= OLED_STATUS_RAM_RD when stTestRdRam,
+	OLED_STATUS_RAM_WR when stTestWrRam,
+	OLED_STATUS_FLASH_RD when stTestWrFlash1|stTestWrFlash2|stTestWrFlash3,
+	OLED_STATUS_FLASH_WR when stTestRdFlash1|stTestRdFlash2,
+	OLED_STATUS_PASSED when stTestPassed1|stTestPassed2,
+	OLED_STATUS_FAILED when stTestFailedRam1|stTestFailedRam2|stTestFailedFlashQRY1|stTestFailedFlashQRY2|stTestFailedFlashId1|stTestFailedFlashId2,
+	OLED_STATUS_READY when others;
 
 ------------------------------------------------------------------------
 -- Map basic status and control signals
