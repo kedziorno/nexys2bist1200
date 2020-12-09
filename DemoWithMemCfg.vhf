@@ -359,7 +359,10 @@ architecture BEHAVIORAL of DemoWithMemCfg is
       port ( signal i_clk : in std_logic;
              signal i_rst : in std_logic;
              signal i_refresh : in std_logic;
-             signal i_char : in array1;
+             signal i_row0 : in array1;
+             signal i_row1 : in array1;
+             signal i_row2 : in array1;
+             signal i_row3 : in array1;
              signal o_display_ready : out std_logic;
              signal o_busy : out std_logic;
              signal io_sda,io_scl : inout std_logic);
@@ -596,7 +599,10 @@ begin
       port map (i_clk => clk,
                 i_rst => XLXN_1527,
                 i_refresh => '0',
-                i_char => text,
+                i_row0 => text,
+                i_row1 => text,
+                i_row2 => text,
+                i_row3 => text,
                 o_display_ready => o_display_ready,
                 o_busy => o_busy,
                 io_sda => SDA,

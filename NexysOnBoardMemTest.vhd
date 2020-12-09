@@ -326,8 +326,8 @@ signal flagTestRun: std_logic := '0';    -- '1' => Memory Test running
 signal flagMsmWrCycle: std_logic := '0'; -- '1' => Write cycle in progress
 signal flagRightCode: std_logic := '0';  -- '1' => Right QRY ir ID code
 
-constant maxMemAdr: std_logic_vector (23 downto 0) := x"7ffffe";
---constant maxMemAdr: std_logic_vector (23 downto 0) := x"0002fe";
+--constant maxMemAdr: std_logic_vector (23 downto 0) := x"7ffffe";
+constant maxMemAdr: std_logic_vector (23 downto 0) := x"00001e";
 type typestrQRY is array(0 to 2) of std_logic_vector(15 downto 0);
 constant strQRY: typestrQRY :=     (x"0051",    --Q
                                     x"0052",    --R
