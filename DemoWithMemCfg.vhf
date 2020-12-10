@@ -372,6 +372,7 @@ architecture BEHAVIORAL of DemoWithMemCfg is
    constant TEXT_LENGTH : integer := 8;
    signal state_text : array1(0 to OLED_CHARS_MAX-1);
    signal address_text : array1(0 to TEXT_LENGTH-1) := (x"30",x"30",x"30",x"30",x"30",x"30",x"30",x"30");
+   signal data_text : array1(0 to TEXT_LENGTH-1) := (x"30",x"30",x"30",x"30",x"30",x"30",x"30",x"30");
    signal empty_text : array1(0 to 1) := (x"20",x"20");
    signal o_display_ready : std_logic;
    signal o_busy : std_logic;
@@ -605,7 +606,7 @@ begin
                 i_refresh => '0',
                 i_row0 => state_text,
                 i_row1 => address_text,
-                i_row2 => empty_text,
+                i_row2 => data_text,
                 i_row3 => empty_text,
                 o_display_ready => o_display_ready,
                 o_busy => o_busy,
@@ -618,6 +619,11 @@ begin
    address_text(4) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(16 downto 13))),8));
    address_text(3) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(20 downto 17))),8));
    address_text(2) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemAdr_DUMMY(23 downto 21))),8));
+
+   data_text(7) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemDB(3 downto 0))),8));
+   data_text(6) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemDB(7 downto 4))),8));
+   data_text(5) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemDB(11 downto 8))),8));
+   data_text(4) <= std_logic_vector(to_unsigned(to_integer(unsigned'(x"30"))+to_integer(unsigned(MemDB(15 downto 12))),8));
 
 end BEHAVIORAL;
 
