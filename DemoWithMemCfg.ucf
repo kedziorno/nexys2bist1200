@@ -1,3 +1,7 @@
+# i2c
+ NET "SDA" LOC = "L15";
+ NET "SCK" LOC = "K12";
+
 # clock pin for Nexys 2 Board 
  NET "clk" LOC= "B8"; # Bank = 0 , Pin name = IP_L13P_0/GCLK8 , Type = GCLK , Sch name = GCLK0
  NET "clk" CLOCK_DEDICATED_ROUTE = FALSE;
@@ -199,8 +203,8 @@
  NET "PIO<37>" LOC= "B14" | DRIVE = 2 | PULLUP ; # Bank = 0 , Pin name = IO_L04P_0 , Type = I/O , Sch name = R-IO38
  NET "PIO<38>" LOC= "A16" | DRIVE = 2 | PULLUP ; # Bank = 0 , Pin name = IO_L01N_0 , Type = I/O , Sch name = R-IO39
  NET "PIO<39>" LOC= "B16" | DRIVE = 2 | PULLUP ; # Bank = 0 , Pin name = IO_L01P_0 , Type = I/O , Sch name = R-IO40
- NET "PIO<40>" LOC= "L15" | DRIVE = 2 | PULLUP ; # Bank = 1 , Pin name = IO_L09N_1/A11 , Type = DUAL , Sch name = JA1
- NET "PIO<41>" LOC= "K12" | DRIVE = 2 | PULLUP ; # Bank = 1 , Pin name = IO_L11N_1/A9/RHCLK1 , Type = RHCLK/DUAL , Sch name = JA2
+ #NET "PIO<40>" LOC= "L15" | DRIVE = 2 | PULLUP ; # Bank = 1 , Pin name = IO_L09N_1/A11 , Type = DUAL , Sch name = JA1
+ #NET "PIO<41>" LOC= "K12" | DRIVE = 2 | PULLUP ; # Bank = 1 , Pin name = IO_L11N_1/A9/RHCLK1 , Type = RHCLK/DUAL , Sch name = JA2
  NET "PIO<42>" LOC= "L17" | DRIVE = 2 | PULLUP ; # Bank = 1 , Pin name = IO_L10N_1/VREF_1 , Type = VREF , Sch name = JA3
  NET "PIO<43>" LOC= "M15" | DRIVE = 2 | PULLUP ; # Bank = 1 , Pin name = IO_L07P_1 , Type = I/O , Sch name = JA4
  NET "PIO<44>" LOC= "K13" | DRIVE = 2 | PULLUP ; # Bank = 1 , Pin name = IO_L11P_1/A10/RHCLK0 , Type = RHCLK/DUAL , Sch name = JA7

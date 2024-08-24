@@ -187,6 +187,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
 
 entity NexysOnBoardMemCtrl is
   Port(
@@ -264,6 +265,7 @@ architecture Behavioral of NexysOnBoardMemCtrl is
  constant stMsmDWr02: std_logic_vector(3 downto 0) := "0110";
  constant stMsmDir03: std_logic_vector(3 downto 0) := "1110";
  constant stMsmDRd02: std_logic_vector(3 downto 0) := "1010";
+ --type state is (stMsmReady,stMsmFwr01,stMsmFwr02,stMsmFwr03,stMsmFwr04,stMsmFwr05,stMsmFwr06,stMsmFwr07,stMsmAdInc,stMsmDone,stMsmBlind,stMsmDir01,stMsmDWr02,stMsmDir03,stMsmDRd02);
 
 -- Epp Data register addresses
 constant MemCtrlReg:  std_logic_vector(2 downto 0) := "000"; 
@@ -539,7 +541,7 @@ ctlMsmRamCs <= '0'
  -- Memory Control Register
  process (clk, ctlMsmDwrIn)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     if ctlMsmDwrIn = '1' and                    -- write cycle
        regEppAdrIn(2 downto 0) = MemCtrlReg and -- MemCtrlReg addressed
        ComponentSelect = '1' then -- NexysOnBoardMemCtrl comp. selected
@@ -551,7 +553,7 @@ ctlMsmRamCs <= '0'
  -- Memory Address Register/Counter
 MsmAdrL: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     if ctlMsmAdrInc = '1' then                 -- automatic memory cycle
      regMemAdr(7 downto 0) <= regMemAdr(7 downto 0) + 1; -- inc. address 
     elsif ctlMsmDwrIn = '1' and                -- Epp write cycle
@@ -566,7 +568,7 @@ MsmAdrL: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
 
 MsmAdrM: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     if ctlMsmAdrInc = '1' and                  -- automatic memory cycle
        carryoutL = '1' then                    -- lower byte rollover
      regMemAdr(15 downto 8) <= regMemAdr(15 downto 8) + 1;--inc. address
@@ -582,7 +584,7 @@ MsmAdrM: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
 
 MsmAdrH: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     if ctlMsmAdrInc = '1' and                  -- automatic memory cycle
        carryoutL = '1' and                     -- lower byte rollover
        carryoutM = '1' then                    -- middle byte rollover
@@ -598,7 +600,7 @@ MsmAdrH: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
 -- Memory write data holding register 
  process (clk, ctlMsmDwrIn)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     if ctlMsmDwrIn = '1' and                   -- Epp write cycle
        (regEppAdrIn(2 downto 0) = RamAutoRW or  -- | Any register holding
         regEppAdrIn(2 downto 0) = FlashAutoRW or-- | data to be written
@@ -616,7 +618,7 @@ MsmAdrH: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
  -- Memory read register: - holds data after an automatic read
  process (clk)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     if stMsmCur = stMsmDRd02 then    -- direct read state
      if ctlMcrWord = '1' and    -- word mode
 	     regMemAdr(0) = '1' then	 -- odd address
@@ -624,7 +626,7 @@ MsmAdrH: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
 	  elsif ctlMcrWord = '1' and    -- word mode
 	        regMemAdr(0) = '0' then	 -- even address
              regMemRdData <= busMemIn(7 downto 0); --update regMemRdData
-             regMemRdDataAux <= busMemIn(15 downto 8);  
+             regMemRdDataAux <= busMemIn(15 downto 8);
 				                            -- update auxiliary regMemRdData
 	  elsif ctlMcrWord = '0' and    -- byte mode
 	        regMemAdr(0) = '0' then	 -- even address
@@ -653,12 +655,12 @@ MsmAdrH: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
 
  process (clk)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     stMsmCur <= stMsmNext;
    end if;
   end process;
 
- process (stMsmCur)
+ process (clk,stMsmCur)
 
  variable flagMsmCycle: std_logic;   -- 1 => Msm cycle requested
  variable flagBlindCycle: std_logic; -- 1 => Blind Msm cycle requested:
@@ -713,35 +715,35 @@ MsmAdrH: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
 
 -- Automatic flash write cont.
     when stMsmFwr01 =>
-     if DelayCnt = "00101" then
+     if std_match(DelayCnt(4 downto 0),"00101") then
       stMsmNext <= stMsmFwr02;
      else 
       stMsmNext <= stMsmFwr01;
      end if;
 
     when stMsmFwr02 =>
-     if DelayCnt = "00111" then
+     if std_match(DelayCnt(4 downto 0),"00111") then
       stMsmNext <= stMsmFwr03;
      else 
       stMsmNext <= stMsmFwr02;
      end if;
 
     when stMsmFwr03 =>
-     if DelayCnt = "01101" then
+     if std_match(DelayCnt(4 downto 0),"01101") then
       stMsmNext <= stMsmFwr04;
      else 
       stMsmNext <= stMsmFwr03;
      end if;
 
     when stMsmFwr04 =>
-     if DelayCnt = "01101" then
+     if std_match(DelayCnt(4 downto 0),"01101") then
       stMsmNext <= stMsmFwr05;
      else 
       stMsmNext <= stMsmFwr04;
      end if;
 
     when stMsmFwr05 =>
-     if DelayCnt = "--101" then
+     if std_match(DelayCnt(4 downto 0),"--101") then
       if busMemIn(7) = '0' then 
        stMsmNext <= stMsmFwr06;
       else
@@ -752,14 +754,14 @@ MsmAdrH: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
      end if;
 
     when stMsmFwr06 =>
-     if DelayCnt = "--111" then
+     if std_match(DelayCnt(4 downto 0),"--111") then
       stMsmNext <= stMsmFwr07;
      else 
       stMsmNext <= stMsmFwr06;
      end if;
 
     when stMsmFwr07 =>
-     if DelayCnt = "--101" then
+     if std_match(DelayCnt(4 downto 0),"--101") then
       if busMemIn(7) = '1' then 
        stMsmNext <= stMsmAdInc;
       else
@@ -783,7 +785,7 @@ MsmAdrH: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
 
 -- Direct write
      when stMsmDWr02 =>
-       if DelayCnt = "--000" then
+       if std_match(DelayCnt(4 downto 0),"--000") then
          stMsmNext <= stMsmDir03;
        else
          stMsmNext <= stMsmDWr02;  -- keep state
@@ -791,7 +793,7 @@ MsmAdrH: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
 
 -- Direct read cont.
      when stMsmDRd02 =>
-       if DelayCnt = "--000" then
+       if std_match(DelayCnt(4 downto 0),"--000") then
          stMsmNext <= stMsmDir03;
        else
          stMsmNext <= stMsmDRd02;  -- keep state
@@ -830,7 +832,7 @@ MsmAdrH: process (clk, ctlMsmDwrIn, ctlMsmAdrInc)
 
  process (clk)
   begin
-   if clk'event and clk = '1' then
+   if (rising_edge(clk)) then
     if stMsmCur = stMsmReady then
      DelayCnt <= "00000";
     else
