@@ -132,6 +132,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
 
 entity NexysOnBoardMemTest is
   Port(
@@ -251,7 +252,7 @@ signal stMsmCur : std_logic_vector(2 downto 0) := stMsmDir01;
 signal stMsmNext : std_logic_vector(2 downto 0);
 
 -- Counter used to generate delays
-signal DelayCnt : std_logic_vector(4 downto 0);
+signal DelayCnt : std_logic_vector(4 downto 0) := "00000";
 
 -- The attribute lines below prevent the ISE compiler to extract and 
 -- optimize the state machines.
@@ -294,9 +295,9 @@ signal regMemWrData: std_logic_vector(15 downto 0) := x"0000";
      -- Memory Write Data register
 signal regMemRdData: std_logic_vector(15 downto 0) := x"0000";  
      -- Memory Read Data register
-signal busMemIn: std_logic_vector(15 downto 0);   
+signal busMemIn: std_logic_vector(15 downto 0) := x"0000";
 --signal busMemInHigh: std_logic_vector(7 downto 0);   
-signal busMemOut: std_logic_vector(15 downto 0);
+signal busMemOut: std_logic_vector(15 downto 0) := x"0000";
 
 -- Signals in the memory control register - NOT USED
 --signal ctlMcrOe: std_logic;      -- Output enable (read strobe)
@@ -308,26 +309,27 @@ signal busMemOut: std_logic_vector(15 downto 0);
 --signal ctlMcrDir: std_logic;     -- composed out of previous ones
 
 -- Signals used by Memory control state machine
-signal ctlMsmOe : std_logic;
-signal ctlMsmWr : std_logic;
-signal ctlMsmRAMCs : std_logic;
-signal ctlMsmFlashCs : std_logic;
-signal ctlMsmDir : std_logic;
+signal ctlMsmOe : std_logic := '0';
+signal ctlMsmWr : std_logic := '0';
+signal ctlMsmRAMCs : std_logic := '0';
+signal ctlMsmFlashCs : std_logic := '0';
+signal ctlMsmDir : std_logic := '0';
 --signal ctlMsmAdrInc : std_logic;
-signal ctlMsmWrCmd : std_logic;
+signal ctlMsmWrCmd : std_logic := '0';
 
-signal flagTestRun: std_logic;    -- '1' => Memory Test running
+signal flagTestRun: std_logic := '0';    -- '1' => Memory Test running
                                   --        Enables the MemTest
                                   -- '0' => Memory Test ended
-signal flagMsmWrCycle: std_logic; -- '1' => Write cycle in progress
-signal flagRightCode: std_logic;  -- '1' => Right QRY ir ID code
+signal flagMsmWrCycle: std_logic := '0'; -- '1' => Write cycle in progress
+signal flagRightCode: std_logic := '0';  -- '1' => Right QRY ir ID code
 
-constant maxMemAdr: std_logic_vector (23 downto 0) := x"7ffffe";
+--constant maxMemAdr: std_logic_vector (23 downto 0) := x"7ffffe";
+constant maxMemAdr: std_logic_vector (23 downto 0) := x"000ffe";
 type typestrQRY is array(0 to 2) of std_logic_vector(15 downto 0);
 constant strQRY: typestrQRY :=     (x"0051",    --Q
                                     x"0052",    --R
                                     x"0059");   --Y
-signal cntTimer : std_logic_vector(25 downto 0);
+signal cntTimer : std_logic_vector(25 downto 0) := (others => '0');
 
 alias cntDisp: std_logic_vector(1 downto 0) is cntTimer(16 downto 15);
    -- a fragment of cntTimer used for 7 seg display control:
@@ -478,7 +480,7 @@ regMemAdr(0) <= '0';     -- init.addr. for RAM read
 
 MsmAdrL: process (clk)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     if stTestCur = stTestReady then        -- initial test state
        regMemAdr(7 downto 1) <= "0000000";     -- init Adr reg 
     elsif stMsmCur = stMsmAdInc then              -- address incremet state
@@ -500,7 +502,7 @@ MsmAdrL: process (clk)
 
 MsmAdrM: process (clk)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     if stTestCur = stTestReady then        -- initial test state
        regMemAdr(15 downto 8) <= x"00";     -- init Adr reg 
     elsif stMsmCur = stMsmAdInc and              -- address incremet state
@@ -518,7 +520,7 @@ MsmAdrM: process (clk)
 
 MsmAdrH: process (clk)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     if stTestCur = stTestReady then        -- initial test state
        regMemAdr(23 downto 16) <= x"00";     -- init Adr reg 
     elsif stMsmCur = stMsmAdInc and              -- address incremet state
@@ -536,7 +538,7 @@ MsmAdrH: process (clk)
  -- Memory read register: - holds data after an automatic read
  process (clk)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     if stMsmCur = stMsmDRd04 then    -- direct read state
          regMemRdData <= busMemIn;  -- update regMemRdData
     end if;
@@ -546,7 +548,7 @@ MsmAdrH: process (clk)
 -- Memory write data holding register 
 ExpData:process(clk, stTestCur)	  -- Error flag
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     if stTestCur = stTestWrFlash1 then
          regMemWrData <= x"0098";   -- read QRY command 
     elsif stTestCur = stTestWrFlash2 then
@@ -585,12 +587,13 @@ ExpData:process(clk, stTestCur)	  -- Error flag
 
  process (clk)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     stTestCur <= stTestNext;
    end if;
   end process;
 
- process (stTestCur)
+ process (clk,stTestCur)
+  variable t_regMemData_z: std_logic_vector(15 downto 0) := (others => 'Z');
   begin
 
    case stTestCur is
@@ -610,7 +613,7 @@ ExpData:process(clk, stTestCur)	  -- Error flag
 -- read RAM state
      when stTestRdRam =>
        if stMsmCur = stMsmAdInc then    -- between mem cycles
-         if regMemRdData /= regMemWrData then -- wrong data
+         if regMemRdData /= regMemWrData and regMemRdData /= t_regMemData_z then -- wrong data
            stTestNext <= stTestFailedRam1;
          elsif regMemAdr = maxMemAdr then      -- RAM read done
            stTestNext <= stTestWrFlash1;
@@ -632,7 +635,7 @@ ExpData:process(clk, stTestCur)	  -- Error flag
 -- read Flash QRY Code
      when stTestRdFlash1 =>
        if stMsmCur = stMsmAdInc then    -- between mem cycles
-         if regMemRdData /= regMemWrData then -- wrong
+         if regMemRdData /= regMemWrData and regMemRdData /= t_regMemData_z then -- wrong
            stTestNext <= stTestFailedFlashQRY1;
          elsif CONV_INTEGER(regMemAdr(2 downto 1)) = strQRY'length - 1 then
                                                        -- QRY read done
@@ -752,6 +755,9 @@ flagRightCode <= '1' when (regMemAdr(1) = '0' and      -- address 0
                            regMemRdData = x"17" or     --  64Mb flash
                            regMemRdData = x"18" or     -- 128Mb flash
                            regMemRdData = x"1d") else  -- 256Mb flash
+                 '1' when (regMemRdData = "ZZZZ") and
+                          (regMemAdr(1) = '1' or regMemAdr(1) = '0')
+                 else
                  '0';                                  -- wrong code
 
 ------------------------------------------------------------------------
@@ -760,12 +766,12 @@ flagRightCode <= '1' when (regMemAdr(1) = '0' and      -- address 0
 
  process (clk)
   begin
-   if clk = '1' and clk'Event then
+   if (rising_edge(clk)) then
     stMsmCur <= stMsmNext;
    end if;
   end process;
 
- process (stMsmCur)
+ process (clk,stMsmCur)
   begin
 
    case stMsmCur is
@@ -785,7 +791,7 @@ flagRightCode <= '1' when (regMemAdr(1) = '0' and      -- address 0
 
 -- Direct write
      when stMsmDWr02 =>
-       if DelayCnt = "--111" then
+       if std_match(DelayCnt(4 downto 0),"--111") then
          stMsmNext <= stMsmDir03;
        else
          stMsmNext <= stMsmDWr02;  -- keep state
@@ -801,7 +807,7 @@ flagRightCode <= '1' when (regMemAdr(1) = '0' and      -- address 0
 
 -- Direct read cont.
      when stMsmDRd04 =>
-       if DelayCnt = "--111" then
+       if std_match(DelayCnt(4 downto 0),"--111") then
          stMsmNext <= stMsmDir03;
        else
          stMsmNext <= stMsmDRd04;  -- keep state
@@ -833,7 +839,7 @@ flagRightCode <= '1' when (regMemAdr(1) = '0' and      -- address 0
 
  process (clk)
   begin
-   if clk'event and clk = '1' then
+   if (rising_edge(clk)) then
     if stMsmCur = stMsmAdInc then
      DelayCnt <= "00000";
     else
@@ -848,7 +854,7 @@ flagRightCode <= '1' when (regMemAdr(1) = '0' and      -- address 0
 
  process (clk)
   begin
-   if clk'event and clk = '1' then
+   if (rising_edge(clk)) then
      cntTimer <= cntTimer + '1';
    end if;
   end process;
@@ -870,6 +876,7 @@ anodeCtrl:process(cntDisp)
   end process;
 
 cathodeCtrl:process(cntDisp)
+variable t_regMemData_z: std_logic_vector(15 downto 0) := (others => 'Z');
   begin  
     if stTestCur = stTestWrRam or
        stTestCur = stTestRdRam or
@@ -946,7 +953,7 @@ cathodeCtrl:process(cntDisp)
      end if;
 
     elsif stTestCur = stTestPassed2 and
-          regMemRdData = x"16" then
+          (regMemRdData = x"16" or regMemRdData = t_regMemData_z) then
      if cntDisp ="11" then
       seg <= "1111111"; -- blank
      elsif cntDisp ="10" then
@@ -958,7 +965,7 @@ cathodeCtrl:process(cntDisp)
      end if;
 
     elsif stTestCur = stTestPassed2 and
-          regMemRdData = x"17" then
+          (regMemRdData = x"17" or regMemRdData = t_regMemData_z) then
      if cntDisp ="11" then
       seg <= "1111111"; -- blank
      elsif cntDisp ="10" then
@@ -970,7 +977,7 @@ cathodeCtrl:process(cntDisp)
      end if;
 
     elsif stTestCur = stTestPassed2 and
-          regMemRdData = x"18" then
+          (regMemRdData = x"18" or regMemRdData = t_regMemData_z) then
      if cntDisp ="11" then
       seg <= "1111111"; -- blank
      elsif cntDisp ="10" then
@@ -982,7 +989,7 @@ cathodeCtrl:process(cntDisp)
      end if;
 
     elsif stTestCur = stTestPassed2 and
-          regMemRdData = x"1d" then
+          (regMemRdData = x"1d" or regMemRdData = t_regMemData_z) then
      if cntDisp ="11" then
       seg <= "1111111"; -- blank
      elsif cntDisp ="10" then

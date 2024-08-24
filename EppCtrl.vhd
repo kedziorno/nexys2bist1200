@@ -201,17 +201,10 @@ architecture Behavioral of EppCtrl is
 -- state machine. 
 -- The states are such a way assigned that each transition
 -- changes a single state register bit (Grey code - like)
-   constant stEppReady     : std_logic_vector(2 downto 0) := "000";  
-   constant stEppStb       : std_logic_vector(2 downto 0) := "010";   
-   constant stEppRegTransf : std_logic_vector(2 downto 0) := "110";   
-   constant stEppSetProc   : std_logic_vector(2 downto 0) := "011";
-   constant stEppLaunchProc: std_logic_vector(2 downto 0) := "111";
-   constant stEppWaitProc  : std_logic_vector(2 downto 0) := "101";
-   constant stEppDone      : std_logic_vector(2 downto 0) := "100";
+	type eppstate is (stEppReady,stEppStb,stEppRegTransf,stEppSetProc,stEppLaunchProc,stEppWaitProc,stEppDone);
 
 -- Epp state register and next state signal for the Epp FSM
-   signal stEppCur: std_logic_vector(2 downto 0) := stEppReady;
-   signal stEppNext: std_logic_vector(2 downto 0);
+   signal stEppCur,stEppNext : eppstate;
 
 -- The attribute lines below prevent the ISE compiler to extract and 
 -- optimize the state machines.
@@ -258,7 +251,7 @@ begin
 -- Synchronized Epp inputs:
    process(clk)
    begin
-      if clk'event and clk='1' then
+      if (rising_edge(clk)) then
          if stEppCur = stEppReady then
             ctlEppRdCycleOut <= '0';
          elsif stEppCur = stEppStb then
@@ -287,7 +280,7 @@ begin
                          and EppDstb = '0' 
                          and EppWr = '0' else 
                    '0';
-   ctlEppStartOut <= '1' when stEppCur = stEppLaunchProc else 
+   ctlEppStartOut <= '1' when stEppCur = stEppLaunchProc else
                      '0';
   
 ------------------------------------------------------------------------
@@ -295,7 +288,7 @@ begin
 ------------------------------------------------------------------------
    process (clk)
       begin
-         if clk = '1' and clk'Event then
+         if(rising_edge(clk)) then
             if EppRst = '0' then 
                stEppCur <= stEppReady;
             else
@@ -304,7 +297,7 @@ begin
          end if;
       end process;
 
-   process (stEppCur)
+   process (clk,stEppCur)
       begin
          case stEppCur is
             -- Idle state waiting for the beginning of an EPP cycle
@@ -367,7 +360,7 @@ begin
 
    process (clk, ctlEppAwr)
       begin
-         if clk = '1' and clk'Event then
+         if (rising_edge(clk)) then
             if ctlEppAwr = '1' then
                regEppAdrOut <= EppDBIn;
             end if;
