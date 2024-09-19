@@ -1,0 +1,20 @@
+v {xschem version=3.4.6RC file_version=1.2}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+T {@symname} -94.5 -6 0 0 0.3 0.3 {}
+T {@name} 135 -32 0 0 0.2 0.2 {}
+L 4 -130 -20 130 -20 {}
+L 4 -130 20 130 20 {}
+L 4 -130 -20 -130 20 {}
+L 4 130 -20 130 20 {}
+B 5 147.5 -12.5 152.5 -7.5 {name=Snake sig_type=typeSnake06 dir=out value=initSnake}
+L 4 130 -10 150 -10 {}
+T {Snake} 125 -14 0 1 0.2 0.2 {}
+B 5 -152.5 -12.5 -147.5 -7.5 {name=NextSnake sig_type=typeSnake06 dir=in value=initSnake dir=in}
+L 4 -150 -10 -130 -10 {}
+T {NextSnake} -125 -14 0 0 0.2 0.2 {}
+B 5 -152.5 7.5 -147.5 12.5 {name=ckSnake dir=in dir=in}
+L 4 -150 10 -130 10 {}
+T {ckSnake} -125 6 0 0 0.2 0.2 {}

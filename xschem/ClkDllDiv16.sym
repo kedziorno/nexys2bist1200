@@ -1,0 +1,47 @@
+v {xschem version=3.4.6RC file_version=1.2}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+T {@symname} -67.5 -6 0 0 0.3 0.3 {}
+T {@name} 135 -82 0 0 0.2 0.2 {}
+L 4 -130 -70 130 -70 {}
+L 4 -130 70 130 70 {}
+L 4 -130 -70 -130 70 {}
+L 4 130 -70 130 70 {}
+B 5 147.5 -62.5 152.5 -57.5 {name=cntDisp sig_type=typeTarget dir=out}
+L 4 130 -60 150 -60 {}
+T {cntDisp} 125 -64 0 1 0.2 0.2 {}
+B 5 -152.5 -62.5 -147.5 -57.5 {name=ckIn dir=in dir=in}
+L 4 -150 -60 -130 -60 {}
+T {ckIn} -125 -64 0 0 0.2 0.2 {}
+B 5 147.5 -42.5 152.5 -37.5 {name=cntPwm[c_number_switches-1:0] dir=out}
+L 4 130 -40 150 -40 {}
+T {cntPwm[c_number_switches-1:0]} 125 -44 0 1 0.2 0.2 {}
+B 5 147.5 -22.5 152.5 -17.5 {name=ckFade dir=out}
+L 4 130 -20 150 -20 {}
+T {ckFade} 125 -24 0 1 0.2 0.2 {}
+B 5 147.5 -2.5 152.5 2.5 {name=cntDiv[c_ckSnake-1:0] dir=out}
+L 4 130 0 150 0 {}
+T {cntDiv[c_ckSnake-1:0]} 125 -4 0 1 0.2 0.2 {}
+B 5 147.5 17.5 152.5 22.5 {name=ckSnake dir=out}
+L 4 130 20 150 20 {}
+T {ckSnake} 125 16 0 1 0.2 0.2 {}
+B 3 -152.5 -42.5 -147.5 -37.5 {name=c_ckSnake generic_type=integer  value="22" generic_type=integer}
+L 4 -150 -40 -130 -40 {}
+T {c_ckSnake} -125 -44 0 0 0.2 0.2 {}
+B 3 -152.5 -22.5 -147.5 -17.5 {name=c_ckFade generic_type=integer  value="18" generic_type=integer}
+L 4 -150 -20 -130 -20 {}
+T {c_ckFade} -125 -24 0 0 0.2 0.2 {}
+B 3 -152.5 -2.5 -147.5 2.5 {name=c_ckAnode generic_type=integer  value="18" generic_type=integer}
+L 4 -150 0 -130 0 {}
+T {c_ckAnode} -125 -4 0 0 0.2 0.2 {}
+B 3 -152.5 17.5 -147.5 22.5 {name=c_number_buttons generic_type=integer  value="1" generic_type=integer}
+L 4 -150 20 -130 20 {}
+T {c_number_buttons} -125 16 0 0 0.2 0.2 {}
+B 3 -152.5 37.5 -147.5 42.5 {name=c_number_switches generic_type=integer  value="1" generic_type=integer}
+L 4 -150 40 -130 40 {}
+T {c_number_switches} -125 36 0 0 0.2 0.2 {}
+B 3 -152.5 57.5 -147.5 62.5 {name=ckPwmRange generic_type=integer  value="14" generic_type=integer}
+L 4 -150 60 -130 60 {}
+T {ckPwmRange} -125 56 0 0 0.2 0.2 {}

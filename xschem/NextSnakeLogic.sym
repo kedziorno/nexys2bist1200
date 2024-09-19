@@ -1,0 +1,35 @@
+v {xschem version=3.4.6RC file_version=1.2}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+T {@symname} -81 -6 0 0 0.3 0.3 {}
+T {@name} 135 -82 0 0 0.2 0.2 {}
+L 4 -130 -70 130 -70 {}
+L 4 -130 70 130 70 {}
+L 4 -130 -70 -130 70 {}
+L 4 130 -70 130 70 {}
+B 5 -152.5 -62.5 -147.5 -57.5 {name=ck dir=in dir=in}
+L 4 -150 -60 -130 -60 {}
+T {ck} -125 -64 0 0 0.2 0.2 {}
+B 5 -152.5 -42.5 -147.5 -37.5 {name=btn[c_number_buttons-1:0] dir=in dir=in}
+L 4 -150 -40 -130 -40 {}
+T {btn[c_number_buttons-1:0]} -125 -44 0 0 0.2 0.2 {}
+B 5 -152.5 -22.5 -147.5 -17.5 {name=Direction sig_type=typeDirection dir=in value=left dir=in}
+L 4 -150 -20 -130 -20 {}
+T {Direction} -125 -24 0 0 0.2 0.2 {}
+B 5 -152.5 -2.5 -147.5 2.5 {name=NextTarget sig_type=typeTarget dir=in value=0}
+L 4 -150 0 -130 0 {}
+T {NextTarget} -125 -4 0 0 0.2 0.2 {}
+B 5 -152.5 17.5 -147.5 22.5 {name=Target sig_type=typeTarget dir=in value=0}
+L 4 -150 20 -130 20 {}
+T {Target} -125 16 0 0 0.2 0.2 {}
+B 5 -152.5 37.5 -147.5 42.5 {name=Snake sig_type=typeSnake06 dir=in value=initSnake}
+L 4 -150 40 -130 40 {}
+T {Snake} -125 36 0 0 0.2 0.2 {}
+B 5 147.5 -62.5 152.5 -57.5 {name=NextSnake sig_type=typeSnake06 dir=out value=initSnake}
+L 4 130 -60 150 -60 {}
+T {NextSnake} 125 -64 0 1 0.2 0.2 {}
+B 3 -152.5 57.5 -147.5 62.5 {name=c_number_buttons generic_type=integer  value="1" generic_type=integer}
+L 4 -150 60 -130 60 {}
+T {c_number_buttons} -125 56 0 0 0.2 0.2 {}
